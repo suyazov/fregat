@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Школа тендерного обучения «Фрегат» — Профессия Тендерный специалист</title>
+    <meta name="description" content="Онлайн-школа Фрегат. Обучение тендерному делу с нуля. Госзакупки, 44-ФЗ, 223-ФЗ. Диплом гос. образца.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --gold-dim: rgba(212, 175, 55, 0.2);
+            --black-bg: #050505;
+            --black-card: #0A0A0A;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--black-bg);
+            color: #E0E0E0;
+            scroll-behavior: smooth;
+        }
+
+        /* Золотой градиент текста */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Декоративные линии в стиле фирменного стиля */
+        .geo-line-v {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--gold-dim), transparent);
+        }
+        .geo-line-h {
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+        }
+
+        /* Стиль рамки как у визитки/конверта */
+        .card-frame {
+            position: relative;
+            background: var(--black-card);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        /* Угловые декоры */
+        .card-frame::before, .card-frame::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: var(--gold);
+            border-style: solid;
+            transition: all 0.3s ease;
+        }
+        .card-frame::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+        .card-frame::after { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+        
+        .card-frame:hover::before, .card-frame:hover::after {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Кнопки */
+        .btn-gold {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            color: #000;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Слайдер */
+        .slider-container {
+            overflow: hidden;
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            padding: 0 1rem;
+        }
+
+        /* Стилизация скроллбара */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+        /* Анимации появления */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <div class="flex items-center gap-3">
+                <img src="https://z-cdn-media.chatglm.cn/files/13817077-3fd8-4076-ab8b-31702a8b0e59.png?auth_key=1873167472-1ad3307f6b1647739973096b31e2b490-0-f38e570a642956a5ac3e872ef08c03d4" alt="Логотип Фрегат" class="h-12 w-auto">
+                <span class="text-2xl font-light tracking-widest text-gold-gradient">ФРЕГАТ</span>
+            </div>
+            <nav class="hidden md:flex gap-10 text-sm text-gray-400">
+                <a href="#audience" class="hover:text-white transition border-b border-transparent hover:border-gold pb-1">Для кого</a>
+                <a href="#program" class="hover:text-white transition border-b border-transparent hover:border-gold pb-1">Программа</a>
+                <a href="#expert" class="hover:text-white transition border-b border-transparent hover:border-gold pb-1">Эксперт</a>
+                <a href="#price" class="hover:text-white transition border-b border-transparent hover:border-gold pb-1">Цена</a>
+            </nav>
+            <a href="#consult" class="btn-gold px-6 py-3 rounded text-sm tracking-wide">Консультация</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Геометрический декор фона -->
+        <div class="geo-line-v left-1/4 opacity-30"></div>
+        <div class="geo-line-v right-1/4 opacity-30"></div>
+        <div class="geo-line-h top-1/3 opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10 py-20">
+            <div class="mb-8">
+                <span class="text-xs md:text-sm uppercase tracking-[0.3em] text-gray-500 border border-white/10 px-4 py-2">
+                    Лицензия на образовательную деятельность
+                </span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                Профессия <br>
+                <span class="font-serif italic text-gold-gradient">Тендерный специалист</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12">
+                Научим выигрывать тендеры и зарабатывать на госзакупках. Стабильный доход и дипломированный старт в новой профессии за 3 месяца.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#consult" class="btn-gold px-10 py-4 rounded text-lg tracking-wide">
+                    Записаться на курс
+                </a>
+                <a href="#program" class="px-10 py-4 rounded border border-white/20 hover:border-gold hover:text-gold transition text-lg tracking-wide">
+                    Программа
+                </a>
+            </div>
+
+            <!-- Статистика в рамке -->
+            <div class="mt-24 card-frame p-8 md:p-12 max-w-4xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-gold-gradient">+45%</div>
+                        <div class="text-gray-500 text-xs mt-2 uppercase tracking-wider">Рост зарплаты</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-gold-gradient">3 мес.</div>
+                        <div class="text-gray-500 text-xs mt-2 uppercase tracking-wider">Обучение</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-gold-gradient">44-ФЗ</div>
+                        <div class="text-gray-500 text-xs mt-2 uppercase tracking-wider">Законодательство</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-gold-gradient">100%</div>
+                        <div class="text-gray-500 text-xs mt-2 uppercase tracking-wider">Практика</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Slider (Ref: Eduson Carousel) -->
+    <section id="audience" class="py-24 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                Обучение для всех, кто хочет <br>
+                <span class="text-gold-gradient">уверенно работать в госзакупках</span>
+            </h2>
+            <p class="text-center text-gray-500 mb-12">Выберите свой вектор развития</p>
+
+            <div class="slider-container relative">
+                <div class="slider-track" id="audienceSlider">
+                    <!-- Slide 1 -->
+                    <div class="slide">
+                        <div class="card-frame p-8 md:p-12 text-center h-full flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Новичкам</h3>
+                            <p class="text-gray-400 mb-6">
+                                Освоите новую востребованную профессию с нуля. Мы поможем с трудоустройством и составим резюме.
+                            </p>
+                            <div class="text-sm text-gold-gradient uppercase tracking-wider">Начните зарабатывать от 60 000 ₽</div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <div class="card-frame p-8 md:p-12 text-center h-full flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Предпринимателям</h3>
+                            <p class="text-gray-400 mb-6">
+                                Научитесь самостоятельно участвовать в торгах, не переплачивая тендерным агентствам и юристам.
+                            </p>
+                            <div class="text-sm text-gold-gradient uppercase tracking-wider">Выход на госзакупки за 2 недели</div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <div class="card-frame p-8 md:p-12 text-center h-full flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Руководителям и снабженцам</h3>
+                            <p class="text-gray-400 mb-6">
+                                Контролируйте тендерный отдел, оптимизируйте затраты компании и держите руку на пульсе.
+                            </p>
+                            <div class="text-sm text-gold-gradient uppercase tracking-wider">Эффективное управление отделом закупок</div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="slide">
+                        <div class="card-frame p-8 md:p-12 text-center h-full flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Юристам и бухгалтерам</h3>
+                            <p class="text-gray-400 mb-6">
+                                Расширите компетенции, повысьте ценность на рынке труда и начните вести тендерные дела клиентов.
+                            </p>
+                            <div class="text-sm text-gold-gradient uppercase tracking-wider">Дополнительный источник дохода</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Dots -->
+            <div class="flex justify-center gap-3 mt-8">
+                <button onclick="goToSlide(0)" class="slider-dot w-3 h-3 rounded-full bg-gold"></button>
+                <button onclick="goToSlide(1)" class="slider-dot w-3 h-3 rounded-full bg-white/20 hover:bg-gold transition"></button>
+                <button onclick="goToSlide(2)" class="slider-dot w-3 h-3 rounded-full bg-white/20 hover:bg-gold transition"></button>
+                <button onclick="goToSlide(3)" class="slider-dot w-3 h-3 rounded-full bg-white/20 hover:bg-gold transition"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works (Ref: Eduson Process) -->
+    <section class="py-24 bg-black/40 border-y border-white/5 relative overflow-hidden">
+        <!-- Decorative element -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gold/5 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+                Как проходит <span class="text-gold-gradient">обучение</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 border border-gold rounded-full flex items-center justify-center text-gold text-2xl font-bold relative">
+                        <div class="absolute inset-0 border border-gold rounded-full transform rotate-45 opacity-30"></div>
+                        01
+                    </div>
+                    <h3 class="font-semibold mb-2">Входное тестирование</h3>
+                    <p class="text-gray-500 text-sm">Оцениваем ваш уровень знаний и подбираем стартовую точку.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 border border-gold rounded-full flex items-center justify-center text-gold text-2xl font-bold relative">
+                         <div class="absolute inset-0 border border-gold rounded-full transform rotate-45 opacity-30"></div>
+                        02
+                    </div>
+                    <h3 class="font-semibold mb-2">Онлайн-уроки</h3>
+                    <p class="text-gray-500 text-sm">Смотрите лекции в удобное время. Доступ к материалам 24/7.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 border border-gold rounded-full flex items-center justify-center text-gold text-2xl font-bold relative">
+                         <div class="absolute inset-0 border border-gold rounded-full transform rotate-45 opacity-30"></div>
+                        03
+                    </div>
+                    <h3 class="font-semibold mb-2">Практика</h3>
+                    <p class="text-gray-500 text-sm">Решаете кейсы на реальных электронных площадках с поддержкой куратора.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 border border-gold rounded-full flex items-center justify-center text-gold text-2xl font-bold relative">
+                         <div class="absolute inset-0 border border-gold rounded-full transform rotate-45 opacity-30"></div>
+                        04
+                    </div>
+                    <h3 class="font-semibold mb-2">Диплом</h3>
+                    <p class="text-gray-500 text-sm">Сдаете итоговый проект и получаете диплом установленного образца.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Block -->
+    <section id="expert" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <!-- Photo Frame Decor -->
+                    <div class="absolute inset-0 border border-gold transform translate-x-4 translate-y-4 rounded"></div>
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Эксперт Галина" class="relative z-10 w-full rounded grayscale hover:grayscale-0 transition duration-700">
+                </div>
+                <div>
+                    <span class="text-gold-gradient text-sm uppercase tracking-widest font-semibold">Ведущий эксперт курса</span>
+                    <h3 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Галина</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Практикующий эксперт в сфере госзакупок с опытом более 10 лет. Успешно провела более 500 тендеров. 
+                        Автор методических пособий и регламентов для крупных заказчиков.
+                    </p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-gold"></span>
+                            Эксперт по 44-ФЗ и 223-ФЗ
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-gold"></span>
+                            Более 200 обученных специалистов
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-gold"></span>
+                            Опыт работы с бюджетами от 10 млн ₽
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Block -->
+    <section id="consult" class="py-24 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="card-frame p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
+                
+                <!-- Background Geometry -->
+                <div class="absolute top-0 right-0 w-64 h-64 border border-gold/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+
+                <div class="md:w-2/3 relative z-10">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gold-gradient">
+                        Индивидуальная консультация с экспертом в подарок
+                    </h3>
+                    <ul class="space-y-3 text-gray-300 mt-6">
+                        <li class="flex gap-3">
+                            <svg class="w-6 h-6 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Подберём эксперта конкретно под ваш запрос</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-6 h-6 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Организуем 60-минутный созвон один на один</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-6 h-6 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Обсудите любые вопросы — от оптимизации процессов до карьерного роста</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="md:w-1/3 w-full flex flex-col items-center gap-4 relative z-10">
+                    <a href="#" class="btn-gold w-full text-center py-4 rounded text-lg">
+                        Записаться на консультацию
+                    </a>
+                    <span class="text-xs text-gray-500">Бесплатно. Без обязательств.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program -->
+    <section id="program" class="py-24 bg-black/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Программа <span class="text-gold-gradient">обучения</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card-frame p-6 flex gap-4 hover:border-gold/50 transition">
+                    <div class="text-gold-gradient font-bold text-2xl font-serif">01</div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Основы законодательства</h3>
+                        <p class="text-gray-500 text-sm">44-ФЗ, 223-ФЗ, ГК РФ. Структура системы закупок.</p>
+                    </div>
+                </div>
+                <div class="card-frame p-6 flex gap-4 hover:border-gold/50 transition">
+                    <div class="text-gold-gradient font-bold text-2xl font-serif">02</div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Электронные площадки</h3>
+                        <p class="text-gray-500 text-sm">Работа с 8 основными площадками, ЭЦП, аккредитация.</p>
+                    </div>
+                </div>
+                <div class="card-frame p-6 flex gap-4 hover:border-gold/50 transition">
+                    <div class="text-gold-gradient font-bold text-2xl font-serif">03</div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Поиск и анализ тендеров</h3>
+                        <p class="text-gray-500 text-sm">Стратегии поиска, оценка рисков, чтение документации.</p>
+                    </div>
+                </div>
+                <div class="card-frame p-6 flex gap-4 hover:border-gold/50 transition">
+                    <div class="text-gold-gradient font-bold text-2xl font-serif">04</div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Участие в торгах</h3>
+                        <p class="text-gray-500 text-sm">Подготовка заявки, тактики торгов, ошибки новичков.</p>
+                    </div>
+                </div>
+                <div class="card-frame p-6 flex gap-4 hover:border-gold/50 transition">
+                    <div class="text-gold-gradient font-bold text-2xl font-serif">05</div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Исполнение контракта</h3>
+                        <p class="text-gray-500 text-sm">Заключение договора, обеспечение, отчетность.</p>
+                    </div>
+                </div>
+                <div class="card-frame p-6 flex gap-4 hover:border-gold/50 transition">
+                    <div class="text-gold-gradient font-bold text-2xl font-serif">06</div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Защита прав и ФАС</h3>
+                        <p class="text-gray-500 text-sm">Обжалование, жалобы, работа с антимонопольной службой.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10 bg-black">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <span class="text-xl font-light tracking-widest text-gold-gradient">ФРЕГАТ</span>
+            </div>
+            <div class="text-gray-500 text-sm text-center">
+                © 2024 Школа «Фрегат». Лицензия №ЛО-77-XXXXX
+            </div>
+            <div class="text-right text-sm">
+                <a href="#" class="text-gray-400 hover:text-gold block">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Slider Logic
+        let currentSlide = 0;
+        const track = document.getElementById('audienceSlider');
+        const dots = document.querySelectorAll('.slider-dot');
+        const totalSlides = 4;
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                if(index === currentSlide) {
+                    dot.classList.remove('bg-white/20');
+                    dot.classList.add('bg-gold');
+                } else {
+                    dot.classList.add('bg-white/20');
+                    dot.classList.remove('bg-gold');
+                }
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Auto-slide
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }, 5000);
+    </script>
+</body>
+</html>
