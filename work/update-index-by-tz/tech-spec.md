@@ -117,8 +117,8 @@ Frontend-only feature. No backend involved.
 - Reviewers: none
 - Files to read: `index.html`
 
-**Task 13: Исправить мета-тег description**
-- Description: Заменить на «Удостоверение о повышении квалификации и сертификат»
+**Task 13: Исправить мета-тег description и добавить CSP**
+- Description: Заменить на «Удостоверение о повышении квалификации и сертификат», добавить CSP meta-тег для безопасности
 - Skill: `code-writing`
 - Files to modify: `index.html` (head section)
 - Reviewers: none
