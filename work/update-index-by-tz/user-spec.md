@@ -1,7 +1,8 @@
 ---
-status: draft
+status: approved
 feature_name: update-index-by-tz
 created: "2026-03-20"
+approved: "2026-03-20"
 ---
 
 # User Spec: Обновить index.html по ТЗ
