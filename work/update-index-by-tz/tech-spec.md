@@ -2,7 +2,7 @@
 created: "2026-03-20"
 status: draft
 size: M
-branch: dev
+---
 ---
 
 # Tech Spec: Обновить index.html по ТЗ
@@ -114,14 +114,14 @@ Frontend-only feature. No backend involved.
 - Description: Заменить все упоминания лицензии на `Л035‑01217‑26/03829175`
 - Skill: `code-writing`
 - Files to modify: `index.html` (all occurrences)
-- Reviewers: none
+- Reviewers: `security-auditor`
 - Files to read: `index.html`
 
 **Task 13: Исправить мета-тег description и добавить CSP**
-- Description: Заменить на «Удостоверение о повышении квалификации и сертификат», добавить CSP meta-тег для безопасности
+- Description: Заменить на «Удостоверение о повышении квалификации и сертификат», добавить CSP meta-тег (разрешить script-src: 'self', connect-src: 'self' https://cdn.tailwindcss.com https://fonts.googleapis.com')
 - Skill: `code-writing`
 - Files to modify: `index.html` (head section)
-- Reviewers: none
+- Reviewers: `security-auditor`
 - Files to read: `index.html` (head section)
 
 **Task 14: Удалить форму CTA**
@@ -147,7 +147,7 @@ Frontend-only feature. No backend involved.
 - Reviewers: none
 
 **Task 17: Security Audit**
-- Description: OWASP Top 10 review across all modified sections
+- Description: OWASP Top 10 review across all modified sections, проверка: инъекции (XSS, HTML injection), аутентификация, шифрование данных
 - Skill: `security-auditor`
 - Files to read: `index.html` (all sections)
 - Reviewers: none
@@ -195,7 +195,7 @@ Frontend-only feature. No backend involved.
 - Rationale: Требование заказчика, упрощает код и улучшает UX на мобильных
 
 ### Decision 3: Дата «Ближайший набор» как статичная заглушка
-- Chosen approach: Использовать статичную дату «1 мая 2026 г.»
+- Chosen approach: Использовать статичную дату «1 мая 2026 г.» (это заглушка, будет заменена на Фазе 2 при переносе на WordPress)
 - Rationale: Это статический сайт (Фаза 1), динамические даты невозможны без backend
 
 ### Decision 4: Контент для новых секций
