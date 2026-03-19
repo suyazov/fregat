@@ -1,0 +1,43 @@
+# Node modules (если добавим)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Claude Code workspace
+.claude/workspace/
+.claude/tmp/
+
+# Документация проекта (отдельный репозиторий: suyazov/fregat-docs)
+.claude/
+
+# Work directory (может содержать чувствительные данные)
+work/*/logs/
+work/*/decisions.md
