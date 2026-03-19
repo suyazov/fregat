@@ -1,7 +1,8 @@
 ---
 created: "2026-03-20"
-status: draft
+status: approved
 size: M
+approved: "2026-03-20"
 ---
 ---
 
