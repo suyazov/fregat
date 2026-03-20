@@ -160,35 +160,18 @@
         </div>
     </section>
 
-    <!-- Форма обратной связи -->
+    <!-- CTA Section -->
     <section class="section">
-        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="card">
-                <h2 class="text-2xl font-serif text-gold-gradient mb-6 text-center">Напишите нам</h2>
-                <form id="contact-form" class="space-y-4">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Ваше имя</label>
-                        <input type="text" id="name" name="name" required
-                            class="w-full px-4 py-3 bg-dark-bg border border-white/10 rounded-lg focus:outline-none focus:border-gold text-white placeholder-gray-500"
-                            placeholder="Как вас зовут?">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                        <input type="email" id="email" name="email" required
-                            class="w-full px-4 py-3 bg-dark-bg border border-white/10 rounded-lg focus:outline-none focus:border-gold text-white placeholder-gray-500"
-                            placeholder="your@email.com">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Сообщение</label>
-                        <textarea id="message" name="message" rows="4" required
-                            class="w-full px-4 py-3 bg-dark-bg border border-white/10 rounded-lg focus:outline-none focus:border-gold text-white placeholder-gray-500 resize-none"
-                            placeholder="Ваш вопрос или сообщение..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-gold w-full py-4 rounded-lg font-semibold text-lg">
-                        Отправить сообщение
-                    </button>
-                </form>
-                <p class="text-gray-500 text-sm text-center mt-4">Форма в разработке — пока пишите на email</p>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="card text-center">
+                <h2 class="text-2xl font-serif text-gold-gradient mb-4">Остались вопросы?</h2>
+                <p class="text-gray-300 mb-6">Напишите нам на email или запишитесь на бесплатную консультацию</p>
+                <a href="mailto:info@фрегат.рф" class="inline-flex items-center gap-2 btn-gold px-8 py-4 rounded-lg text-lg font-semibold">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Написать на email
+                </a>
             </div>
         </div>
     </section>
@@ -290,15 +273,6 @@
                 });
 
                 backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
-            }
-
-            // Contact form
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Форма в разработке. Пожалуйста, напишите нам на email: info@фрегат.рф');
-                });
             }
         });
     </script>
