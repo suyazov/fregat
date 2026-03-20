@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Преподаватели — Школа Фрегат</title>
+    <meta name="description" content="Преподаватели школы Фрегат — эксперты в сфере тендерного обучения.">
+
+    <!-- Open Graph теги -->
+    <meta property="og:title" content="Преподаватели — Школа Фрегат">
+    <meta property="og:description" content="Эксперты в сфере тендерного обучения.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://фрегат.рф/prepodavateli.html">
+    <meta property="og:image" content="https://фрегат.рф/og-image.jpg">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; connect-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' https: data:;">
+
+    <!-- Tailwind CSS через CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#FBE5A8',
+                            dark: '#B8860B',
+                        },
+                        dark: {
+                            bg: '#142125',
+                            card: '#0d181b',
+                            footer: '#0a1214',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Дизайн-система Фрегат -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org микроразметка -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Школа Фрегат",
+        "url": "https://фрегат.рф"
+    }
+    </script>
+</head>
+<body class="bg-dark-bg text-gray-100 antialiased">
+
+    <!-- Прогресс бар прокрутки -->
+    <div id="scroll-progress"></div>
+
+    <!-- Кнопка наверх -->
+    <div id="back-to-top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 backdrop-blur-md border-b border-white/10" style="background-color: rgba(20, 33, 37, 0.95);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="https://z-cdn-media.chatglm.cn/files/13817077-3fd8-4076-ab8b-31702a8b0e59.png?auth_key=1873167472-1ad3307f6b1647739973096b31e2b490-0-f38e570a642956a5ac3e872ef08c03d4" alt="Логотип Фрегат" class="h-12 w-auto logo-clean">
+                <span class="text-2xl font-light tracking-widest text-gold-gradient">ФРЕГАТ</span>
+            </a>
+            <nav class="hidden md:flex gap-10 text-sm text-gray-300 items-center">
+                <a href="index.html" class="hover:text-white transition">Главная</a>
+                <a href="o-shkole.html" class="hover:text-white transition">О школе</a>
+                <a href="prepodavateli.html" class="text-gold">Преподаватели</a>
+                <a href="index.html#program" class="hover:text-white transition">Программа</a>
+                <a href="index.html#price" class="hover:text-white transition">Стоимость</a>
+                <a href="kontakty.html" class="hover:text-white transition">Контакты</a>
+            </nav>
+            <a href="index.html#cta-form" class="btn-gold px-6 py-3 rounded text-sm tracking-wide">Записаться</a>
+        </div>
+    </header>
+
+    <!-- Хлебные крошки -->
+    <div class="pt-28 pb-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="breadcrumb text-sm">
+                <a href="index.html" class="text-gray-400 hover:text-gold transition-colors">Главная</a>
+                <span class="mx-2 text-gray-600">/</span>
+                <span class="text-gold">Преподаватели</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-gold-gradient mb-6">Наши преподаватели</h1>
+            <p class="text-xl text-gray-300">Практики с многолетним опытом работы с тендерами</p>
+        </div>
+    </section>
+
+    <!-- Преподаватели -->
+    <section class="section pb-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Преподаватель 1 -->
+                <div class="card">
+                    <div class="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Фамилия И.О.</h3>
+                    <p class="text-gold mb-2 text-center">Эксперт по тендерам</p>
+                    <div class="text-gray-400 text-sm space-y-2">
+                        <p><strong>Стаж:</strong> XX лет</p>
+                        <p><strong>Специализация:</strong> Участие в закупках по 44-ФЗ и 223-ФЗ</p>
+                        <p class="text-gray-500 text-xs mt-3">(placeholder — информация о преподавателе)</p>
+                    </div>
+                </div>
+
+                <!-- Преподаватель 2 -->
+                <div class="card">
+                    <div class="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Фамилия И.О.</h3>
+                    <p class="text-gold mb-2 text-center">Юрист по закупкам</p>
+                    <div class="text-gray-400 text-sm space-y-2">
+                        <p><strong>Стаж:</strong> XX лет</p>
+                        <p><strong>Специализация:</strong> Правовое обеспечение тендеров, жалобы</p>
+                        <p class="text-gray-500 text-xs mt-3">(placeholder — информация о преподавателе)</p>
+                    </div>
+                </div>
+
+                <!-- Преподаватель 3 -->
+                <div class="card">
+                    <div class="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Фамилия И.О.</h3>
+                    <p class="text-gold mb-2 text-center">Методист</p>
+                    <div class="text-gray-400 text-sm space-y-2">
+                        <p><strong>Стаж:</strong> XX лет</p>
+                        <p><strong>Специализация:</strong> Методика обучения тендерам</p>
+                        <p class="text-gray-500 text-xs mt-3">(placeholder — информация о преподавателе)</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Почему выбирают нас -->
+    <section class="section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-serif text-gold-gradient mb-6 text-center">Почему наши эксперты — лучшие</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-2">Практический опыт</h3>
+                    <p class="text-gray-300">Все преподаватели — действующие специалисты с реальным опытом участия в тендерах</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-2">Актуальные знания</h3>
+                    <p class="text-gray-300">Постоянно следят за изменениями в законодательстве и практики</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-2">Индивидуальный подход</h3>
+                    <p class="text-gray-300">Отвечают на вопросы, помогают с конкретными ситуациями</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-2">Честные кейсы</h3>
+                    <p class="text-gray-300">Делятся реальными историями побед и поражений в тендерах</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="card text-center">
+                <h2 class="text-2xl font-serif mb-4">Хотите учиться у лучших экспертов?</h2>
+                <p class="text-gray-300 mb-6">Запишитесь на обучение и начните выигрывать тендеры</p>
+                <a href="index.html#cta-form" class="btn-gold inline-block px-8 py-4 rounded-lg text-lg font-semibold">Записаться на курс</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10 bg-[#0a1214]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Логотип и описание -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://z-cdn-media.chatglm.cn/files/13817077-3fd8-4076-ab8b-31702a8b0e59.png?auth_key=1873167472-1ad3307f6b1647739973096b31e2b490-0-f38e570a642956a5ac3e872ef08c03d4" alt="Логотип Фрегат" class="h-8 w-auto logo-clean">
+                        <span class="text-xl font-light tracking-widest text-gold-gradient">ФРЕГАТ</span>
+                    </div>
+                    <p class="text-gray-500 text-sm">
+                        Онлайн-школа тендерного обучения.<br>
+                        Обучение профессии «Тендерный специалист».
+                    </p>
+                </div>
+
+                <!-- Навигация -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Навигация</h4>
+                    <div class="text-sm flex flex-col gap-2">
+                        <a href="index.html" class="text-gray-400 hover:text-gold transition">Главная</a>
+                        <a href="o-shkole.html" class="text-gray-400 hover:text-gold transition">О школе</a>
+                        <a href="prepodavateli.html" class="text-gray-400 hover:text-gold transition">Преподаватели</a>
+                        <a href="kontakty.html" class="text-gray-400 hover:text-gold transition">Контакты</a>
+                    </div>
+                </div>
+
+                <!-- Документы -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Документы</h4>
+                    <div class="text-sm flex flex-col gap-2">
+                        <a href="index.html#program" class="text-gray-400 hover:text-gold transition">Программа</a>
+                        <a href="index.html#price" class="text-gray-400 hover:text-gold transition">Стоимость</a>
+                        <a href="svedeniya-ob-obrazovatelnoy-organizatsii.html" class="text-gray-400 hover:text-gold transition">Сведения об образовательной организации</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
+                <div>© 2024 Школа «Фрегат». Все права защищены.</div>
+                <div class="mt-2">Лицензия № Л035‑01217‑26/03829175</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Progress Bar & Back to Top
+            const progressBar = document.getElementById('scroll-progress');
+            const backToTop = document.getElementById('back-to-top');
+
+            if (progressBar && backToTop) {
+                window.addEventListener('scroll', () => {
+                    // Progress
+                    const scrollTop = window.scrollY;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = (scrollTop / docHeight) * 100;
+                    progressBar.style.width = scrollPercent + '%';
+
+                    // Back to top visibility
+                    if (scrollTop > 300) backToTop.classList.add('visible');
+                    else backToTop.classList.remove('visible');
+                });
+
+                backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+            }
+        });
+    </script>
+
+</body>
+</html>
