@@ -1,6 +1,6 @@
 ---
 title: "Сведения об образовательной организации"
-status: draft
+status: approved
 created: "2026-03-20"
 feature: about-organization-page
 work_type: feature
