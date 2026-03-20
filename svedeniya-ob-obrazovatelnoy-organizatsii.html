@@ -49,6 +49,29 @@
     <!-- Дизайн-система Фрегат -->
     <link rel="stylesheet" href="styles.css">
 
+    <style>
+        /* Navigation sidebar active state */
+        .nav-link.active {
+            color: #D4AF37;
+            border-left-color: #D4AF37;
+        }
+        /* Mobile menu toggle */
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.open {
+            display: block;
+        }
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Section spacing */
+        .sveden-section {
+            scroll-margin-top: 100px;
+        }
+    </style>
+
     <!-- Schema.org микроразметка (CollegeOrUniversity) -->
     <script type="application/ld+json">
     {
@@ -78,11 +101,6 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
     </div>
 
-    <!-- Вертикальная надпись -->
-    <div class="vertical-brand hidden lg:block">
-        School Fregat • Tender Training
-    </div>
-
     <!-- Header -->
     <header class="fixed w-full top-0 z-50 backdrop-blur-md border-b border-white/10" style="background-color: rgba(20, 33, 37, 0.95);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
@@ -95,10 +113,6 @@
                 <a href="index.html#program" class="hover:text-white transition">Программа</a>
                 <a href="index.html#price" class="hover:text-white transition">Стоимость</a>
                 <a href="index.html#faq" class="hover:text-white transition">FAQ</a>
-                <!-- Иконка поиска (placeholder) -->
-                <svg class="w-5 h-5 text-gold cursor-pointer hover:text-gold-light transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                </svg>
             </nav>
             <a href="index.html#cta-form" class="btn-gold px-6 py-3 rounded text-sm tracking-wide">Записаться</a>
         </div>
@@ -115,151 +129,555 @@
         </div>
     </div>
 
-    <!-- Main content -->
-    <main>
-        <!-- Task 2.1: Об организации -->
-        <section class="section bg-dark-bg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-serif text-gold-gradient mb-6">Об организации</h2>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">ООО «Фрегат»</h3>
-                    <p class="text-gray-300 mb-4">Работаем с 2018 года.</p>
-                    <p class="text-gray-300 mb-4">Миссия: доступное качественное образование в сфере тендеров.</p>
-                    <p class="text-gray-300">Сфера деятельности: дополнительное профессиональное образование (ДПО).</p>
-                </div>
-            </div>
-        </section>
+    <!-- Page Title -->
+    <div class="pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-5xl font-serif text-gold-gradient">Сведения об образовательной организации</h1>
+        </div>
+    </div>
 
-        <!-- Task 2.2: Лицензия и документы -->
-        <section class="section bg-dark-bg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-serif text-gold-gradient mb-6">Лицензия и документы</h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="card">
-                        <h3 class="text-xl font-semibold mb-4">Лицензия на право ведения образовательной деятельности</h3>
-                        <ul class="space-y-2 text-gray-300">
-                            <li><strong>Номер:</strong> Л035‑01217‑26/03829175</li>
-                            <li><strong>Дата выдачи:</strong> 25.11.2025</li>
-                            <li><strong>Срок действия:</strong> бессрочно</li>
-                        </ul>
-                    </div>
-                    <div class="card flex items-center justify-center min-h-[300px]">
-                        <div class="text-center text-gray-500">
-                            <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                            </svg>
-                            <p>Скан лицензии</p>
-                            <a href="#" class="text-gold hover:text-gold-light text-sm mt-2 inline-block">Скачать (скоро)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Main content with sidebar navigation -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="flex flex-col lg:flex-row gap-8">
 
-        <!-- Task 2.3: Образовательные программы -->
-        <section class="section bg-dark-bg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-serif text-gold-gradient mb-6">Образовательные программы</h2>
-                <div class="card">
-                    <h3 class="text-2xl font-semibold mb-4">Тендеры с нуля для предпринимателей (44-ФЗ и 223-ФЗ)</h3>
-                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+            <!-- Sidebar Navigation -->
+            <aside class="lg:w-80 flex-shrink-0">
+                <div class="lg:sticky lg:top-28 bg-dark-card border border-white/10 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold mb-4 text-gold">Разделы</h3>
+
+                    <!-- Mobile menu toggle -->
+                    <button id="menu-toggle" class="lg:hidden w-full text-left flex items-center justify-between p-2 border border-white/10 rounded mb-4">
+                        <span>Показать меню</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+
+                    <nav id="side-nav" class="mobile-menu lg:block space-y-1">
+                        <a href="#structure" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Структура и органы управления</a>
+                        <a href="#documents" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Документы</a>
+                        <a href="#education" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Образование</a>
+                        <a href="#leadership" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Руководство</a>
+                        <a href="#staff" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Педагогический состав</a>
+                        <a href="#facilities" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Материально-техническое обеспечение</a>
+                        <a href="#scholarships" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Стипендии и меры поддержки</a>
+                        <a href="#paid-services" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Платные образовательные услуги</a>
+                        <a href="#finance" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Финансово-хозяйственная деятельность</a>
+                        <a href="#vacancies" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Вакантные места</a>
+                        <a href="#international" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Международное сотрудничество</a>
+                        <a href="#nutrition" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Организация питания</a>
+                        <a href="#extremism" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Профилактика экстремизма</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1 space-y-8">
+
+                <!-- 1. Структура и органы управления -->
+                <section id="structure" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Структура и органы управления образовательной организацией</h2>
+
+                    <div class="space-y-6">
                         <div>
-                            <p class="text-gray-300 mb-2"><strong>Уровень:</strong> ДПО (повышение квалификации)</p>
-                            <p class="text-gray-300 mb-2"><strong>Форма обучения:</strong> онлайн</p>
-                            <p class="text-gray-300 mb-2"><strong>Срок обучения:</strong> 1 месяц</p>
+                            <h3 class="text-lg font-semibold mb-3">Органы управления</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300 mb-2"><strong>Единственный учредитель:</strong> (placeholder - ФИО или организация)</p>
+                                <p class="text-gray-300"><strong>Орган, осуществляющий функции и полномочия учредителя:</strong> (placeholder)</p>
+                            </div>
                         </div>
+
                         <div>
-                            <p class="text-gray-300 mb-2"><strong>Трудоёмкость:</strong> XX часов</p>
-                            <p class="text-gray-300 mb-2"><strong>Документ:</strong> Удостоверение о повышении квалификации</p>
+                            <h3 class="text-lg font-semibold mb-3">Структурные подразделения</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• Учебный отдел</li>
+                                    <li>• Методический отдел</li>
+                                    <li>• Отдел по работе с обучающимися</li>
+                                    <li>• Технический отдел</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Task 2.4: Преподавательский состав -->
-        <section class="section bg-dark-bg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-serif text-gold-gradient mb-6">Преподавательский состав</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="card text-center">
-                        <div class="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Филиалы</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300">Филиалов нет (placeholder)</p>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Фамилия И.О.</h3>
-                        <p class="text-gold mb-2">Преподаватель</p>
-                        <p class="text-gray-400 text-sm">Стаж: XX лет</p>
                     </div>
-                    <div class="card text-center">
-                        <div class="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Фамилия И.О.</h3>
-                        <p class="text-gold mb-2">Эксперт</p>
-                        <p class="text-gray-400 text-sm">Стаж: XX лет</p>
-                    </div>
-                    <div class="card text-center">
-                        <div class="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Фамилия И.О.</h3>
-                        <p class="text-gold mb-2">Преподаватель</p>
-                        <p class="text-gray-400 text-sm">Стаж: XX лет</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- Task 2.5: Материально-техническая база -->
-        <section class="section bg-dark-bg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-serif text-gold-gradient mb-6">Материально-техническая база</h2>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Платформа онлайн-обучения</h3>
-                    <p class="text-gray-300 mb-4">Обучение проводится на специализированной онлайн-платформе.</p>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>• Доступ к видеоурокам 24/7</li>
-                        <li>• Чат с участниками и экспертами</li>
-                        <li>• Вебинары и Q&A сессии</li>
-                        <li>• Тесты и домашние задания</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <!-- 2. Документы -->
+                <section id="documents" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Документы</h2>
 
-        <!-- Task 2.6: Контакты и реквизиты -->
-        <section class="section bg-dark-bg pb-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-serif text-gold-gradient mb-6">Контакты и реквизиты</h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="card">
-                        <h3 class="text-xl font-semibold mb-4">Контакты</h3>
-                        <div class="space-y-3 text-gray-300">
-                            <p><strong>Телефон:</strong> +7 (XXX) XXX-XX-XX</p>
-                            <p><strong>Email:</strong> <a href="mailto:info@фрегат.рф" class="text-gold hover:text-gold-light">info@фрегат.рф</a></p>
-                            <p><strong>Адрес:</strong> (placeholder)</p>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Лицензия на право ведения образовательной деятельности</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <p class="text-gray-300 mb-2"><strong>Номер:</strong> Л035‑01217‑26/03829175</p>
+                                        <p class="text-gray-300 mb-2"><strong>Дата выдачи:</strong> 25.11.2025</p>
+                                        <p class="text-gray-300"><strong>Срок действия:</strong> бессрочно</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-300 mb-2"><strong>Выдавший орган:</strong> (placeholder)</p>
+                                        <p class="text-gray-300"><strong>Регистрационный номер:</strong> 03829175</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать скан лицензии (скоро)</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Учредительные документы</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <ul class="space-y-3 text-gray-300">
+                                    <li class="flex items-center justify-between">
+                                        <span>Устав ООО «Фрегат»</span>
+                                        <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Решение о создании ООО «Фрегат»</span>
+                                        <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Лицензия на осуществление образовательной деятельности</span>
+                                        <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Локальные нормативные акты</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <ul class="space-y-3 text-gray-300">
+                                    <li class="flex items-center justify-between">
+                                        <span>Положение об организации образовательной деятельности</span>
+                                        <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Положение о текущем контроле успеваемости</span>
+                                        <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Положение о промежуточной аттестации</span>
+                                        <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Правила внутреннего распорядка обучающихся</span>
+                                        <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Договор об оказании платных образовательных услуг</span>
+                                        <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Отчёт о результатах самообследования</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300 mb-2"><strong>Отчётный период:</strong> 2024 год</p>
+                                <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать отчёт (скоро)</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <h3 class="text-xl font-semibold mb-4">Реквизиты</h3>
-                        <div class="space-y-2 text-gray-300 text-sm">
-                            <p><strong>Полное название:</strong> ООО «Фрегат»</p>
-                            <p><strong>ИНН:</strong> XXXXXXXXXXX</p>
-                            <p><strong>ОГРН:</strong> XXXXXXXXXXXXXX</p>
-                            <p><strong>КПП:</strong> XXXXXX</p>
-                            <p><strong>Юридический адрес:</strong> (placeholder)</p>
+                </section>
+
+                <!-- 3. Образование -->
+                <section id="education" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Образование</h2>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Информация о реализуемых уровнях образования</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300 mb-2"><strong>Уровень образования:</strong> Дополнительное профессиональное образование</p>
+                                <p class="text-gray-300"><strong>Форма обучения:</strong> Очная, очно-заочная, заочная (с применением электронного обучения и дистанционных образовательных технологий)</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Образовательные программы</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg overflow-hidden">
+                                <table class="w-full text-sm">
+                                    <thead class="bg-gold/10">
+                                        <tr>
+                                            <th class="px-4 py-3 text-left text-gold">Название программы</th>
+                                            <th class="px-4 py-3 text-left text-gold hidden md:table-cell">Профиль</th>
+                                            <th class="px-4 py-3 text-left text-gold">Срок</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-white/10">
+                                        <tr>
+                                            <td class="px-4 py-3 text-gray-300">
+                                                <strong>Тендеры с нуля для предпринимателей (44-ФЗ и 223-ФЗ)</strong>
+                                                <p class="text-xs text-gray-500 mt-1">Повышение квалификации</p>
+                                            </td>
+                                            <td class="px-4 py-3 text-gray-300 hidden md:table-cell">Тендерный специалист</td>
+                                            <td class="px-4 py-3 text-gray-300">1 месяц</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Сроки действия государственных аккредитаций</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300">Образовательная организация <strong>НЕ ИМЕЕТ</strong> государственной аккредитации.</p>
+                                <p class="text-gray-500 text-sm mt-2">Лицензия на право ведения образовательной деятельности действительна бессрочно.</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Язык обучения</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300">Русский</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Учебные планы</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <ul class="space-y-3 text-gray-300">
+                                    <li class="flex items-center justify-between">
+                                        <span>Учебный план: Тендеры с нуля для предпринимателей</span>
+                                        <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Аннотация к рабочим программам дисциплин</span>
+                                        <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-    </main>
+                </section>
+
+                <!-- 4. Руководство -->
+                <section id="leadership" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Руководство</h2>
+
+                    <div class="space-y-6">
+                        <div class="bg-dark-card border border-white/10 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold mb-4">Руководитель образовательной организации</h3>
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <div class="w-24 h-24 bg-gray-700 rounded-full flex-shrink-0 flex items-center justify-center">
+                                    <svg class="w-12 h-12 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-xl font-semibold mb-2">(placeholder - ФИО)</p>
+                                    <p class="text-gold mb-2">Директор</p>
+                                    <p class="text-gray-300 text-sm mb-2"><strong>Контактный телефон:</strong> +7 (XXX) XXX-XX-XX</p>
+                                    <p class="text-gray-300 text-sm mb-2"><strong>Email:</strong> <a href="mailto:director@фрегат.рф" class="text-gold hover:text-gold-light">director@фрегат.рф</a></p>
+                                    <p class="text-gray-300 text-sm"><strong>Приёмные часы:</strong> (placeholder)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-card border border-white/10 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold mb-4">Заместители руководителя</h3>
+                            <p class="text-gray-500">(placeholder - сведения о заместителях, если есть)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. Педагогический состав -->
+                <section id="staff" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Педагогический состав</h2>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-dark-card border border-white/10 rounded-lg p-6 text-center">
+                            <div class="w-24 h-24 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">(placeholder - ФИО)</h3>
+                            <p class="text-gold mb-2">Преподаватель</p>
+                            <p class="text-gray-400 text-sm mb-2">Стаж: XX лет</p>
+                            <p class="text-gray-500 text-xs">Образование: (placeholder)</p>
+                        </div>
+
+                        <div class="bg-dark-card border border-white/10 rounded-lg p-6 text-center">
+                            <div class="w-24 h-24 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">(placeholder - ФИО)</h3>
+                            <p class="text-gold mb-2">Эксперт</p>
+                            <p class="text-gray-400 text-sm mb-2">Стаж: XX лет</p>
+                            <p class="text-gray-500 text-xs">Образование: (placeholder)</p>
+                        </div>
+
+                        <div class="bg-dark-card border border-white/10 rounded-lg p-6 text-center">
+                            <div class="w-24 h-24 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">(placeholder - ФИО)</h3>
+                            <p class="text-gold mb-2">Преподаватель</p>
+                            <p class="text-gray-400 text-sm mb-2">Стаж: XX лет</p>
+                            <p class="text-gray-500 text-xs">Образование: (placeholder)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. Материально-техническое обеспечение -->
+                <section id="facilities" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Материально-техническое обеспечение и оснащённость образовательного процесса</h2>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Средства обучения и воспитания</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300 mb-4">Обучение проводится на специализированной онлайн-платформе.</p>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• Видеозаписи лекций с возможностью просмотра 24/7</li>
+                                    <li>• Чат с участниками и экспертами</li>
+                                    <li>• Вебинары и Q&A сессии</li>
+                                    <li>• Тесты и домашние задания</li>
+                                    <li>• База знаний и библиотека материалов</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Обеспечение доступа в здания образовательной организации</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300">Образовательная деятельность осуществляется дистанционно. Доступ в здания не требуется.</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Условия питания и охраны здоровья обучающихся</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300">Не применимо (дистанционная форма обучения).</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Доступная среда</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300">Для лиц с ограниченными возможностями здоровья и инвалидов предоставляется возможность обучения с учётом их индивидуальных возможностей и особенностей здоровья. Онлайн-формат обеспечивает доступность образовательной среды.</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Электронные образовательные ресурсы</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• <a href="#" class="text-gold hover:text-gold-light">Федеральный портал "Российское образование"</a></li>
+                                    <li>• <a href="#" class="text-gold hover:text-gold-light">Единая коллекция цифровых образовательных ресурсов</a></li>
+                                    <li>• <a href="#" class="text-gold hover:text-gold-light">Федеральный центр информационно-образовательных ресурсов</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7. Стипендии и меры поддержки -->
+                <section id="scholarships" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Стипендии и меры поддержки обучающихся</h2>
+
+                    <div class="bg-dark-card border border-white/10 rounded-lg p-6">
+                        <p class="text-gray-300 mb-4">Стипендии и иные меры материальной поддержки обучающихся не предусмотрены.</p>
+                        <p class="text-gray-500 text-sm">В соответствии с законодательством Российской Федерации, меры материальной поддержки обучающихся за счёт бюджетных ассигнований федерального бюджета, бюджетов субъектов Российской Федерации, местных бюджетов не предоставляются (организация не имеет государственной аккредитации).</p>
+                    </div>
+                </section>
+
+                <!-- 8. Платные образовательные услуги -->
+                <section id="paid-services" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Платные образовательные услуги</h2>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Образовательные программы</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg overflow-hidden">
+                                <table class="w-full text-sm">
+                                    <thead class="bg-gold/10">
+                                        <tr>
+                                            <th class="px-4 py-3 text-left text-gold">Программа</th>
+                                            <th class="px-4 py-3 text-left text-gold">Стоимость</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-white/10">
+                                        <tr>
+                                            <td class="px-4 py-3 text-gray-300">Тендеры с нуля для предпринимателей (44-ФЗ и 223-ФЗ)</td>
+                                            <td class="px-4 py-3 text-gray-300">См. на <a href="index.html#price" class="text-gold hover:text-gold-light">главной странице</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Договор об оказании платных образовательных услуг</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300 mb-3"><strong>Форма договора:</strong> публичный договор (оферта)</p>
+                                <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать образец договора (скоро)</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Порядок оказания платных образовательных услуг</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <ul class="space-y-2 text-gray-300 text-sm">
+                                    <li>1. Ознакомление с условиями договора на сайте</li>
+                                    <li>2. Запись на обучение через форму на сайте</li>
+                                    <li>3. Оплата образовательной услуги</li>
+                                    <li>4. Доступ к обучающему материалу</li>
+                                    <li>5. Прохождение обучения</li>
+                                    <li>6. Выдача документа об образовании</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Стоимость и порядок оплаты</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300 mb-2"><strong>Способы оплаты:</strong></p>
+                                <ul class="space-y-1 text-gray-300 text-sm">
+                                    <li>• Банковской картой онлайн</li>
+                                    <li>• Безналичный расчёт для юридических лиц</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 9. Финансово-хозяйственная деятельность -->
+                <section id="finance" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Финансово-хозяйственная деятельность</h2>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Объём образовательной деятельности</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300 mb-2"><strong>Финансовый год:</strong> 2024</p>
+                                <p class="text-gray-300 mb-2"><strong>Доход от образовательной деятельности:</strong> (placeholder)</p>
+                                <p class="text-gray-300"><strong>Расходы на образовательную деятельность:</strong> (placeholder)</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">План финансово-хозяйственной деятельности</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <a href="#" class="text-gold hover:text-gold-light text-sm">Скачать (скоро)</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Реквизиты организации</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <p class="text-gray-300 mb-1"><strong>Полное название:</strong> ООО «Фрегат»</p>
+                                        <p class="text-gray-300 mb-1"><strong>ИНН:</strong> XXXXXXXXXXX</p>
+                                        <p class="text-gray-300 mb-1"><strong>КПП:</strong> XXXXXX</p>
+                                        <p class="text-gray-300"><strong>ОГРН:</strong> XXXXXXXXXXXXXX</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-300 mb-1"><strong>Юридический адрес:</strong> (placeholder)</p>
+                                        <p class="text-gray-300 mb-1"><strong>Фактический адрес:</strong> (placeholder)</p>
+                                        <p class="text-gray-300"><strong>Адреса осуществления образовательной деятельности:</strong> дистанционно</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Контакты</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <p class="text-gray-300 mb-2"><strong>Телефон:</strong> +7 (XXX) XXX-XX-XX</p>
+                                <p class="text-gray-300"><strong>Email:</strong> <a href="mailto:info@фрегат.рф" class="text-gold hover:text-gold-light">info@фрегат.рф</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 10. Вакантные места -->
+                <section id="vacancies" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Вакантные места для приёма (перевода) обучающихся</h2>
+
+                    <div class="bg-dark-card border border-white/10 rounded-lg overflow-hidden">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gold/10">
+                                <tr>
+                                    <th class="px-4 py-3 text-left text-gold">Программа</th>
+                                    <th class="px-4 py-3 text-left text-gold">Количество вакантных мест</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/10">
+                                <tr>
+                                    <td class="px-4 py-3 text-gray-300">Тендеры с нуля для предпринимателей (44-ФЗ и 223-ФЗ)</td>
+                                    <td class="px-4 py-3 text-gray-300">Вакантные места есть (запись через форму на сайте)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-gray-500 text-sm mt-4">Информация о количестве вакантных мест обновляется ежемесячно.</p>
+                </section>
+
+                <!-- 11. Международное сотрудничество -->
+                <section id="international" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Международное сотрудничество</h2>
+
+                    <div class="bg-dark-card border border-white/10 rounded-lg p-6">
+                        <p class="text-gray-300">Международное сотрудничество не осуществляется.</p>
+                        <p class="text-gray-500 text-sm mt-2">Образовательная организация реализует образовательные программы только на территории Российской Федерации.</p>
+                    </div>
+                </section>
+
+                <!-- 12. Организация питания -->
+                <section id="nutrition" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Организация питания в образовательной организации</h2>
+
+                    <div class="bg-dark-card border border-white/10 rounded-lg p-6">
+                        <p class="text-gray-300">Не применимо (дистанционная форма обучения).</p>
+                        <p class="text-gray-500 text-sm mt-2">Образовательный процесс осуществляется онлайн без присутствия обучающихся в зданиях организации.</p>
+                    </div>
+                </section>
+
+                <!-- 13. Профилактика экстремизма -->
+                <section id="extremism" class="sveden-section card">
+                    <h2 class="text-2xl font-serif text-gold-gradient mb-6">Профилактика экстремизма</h2>
+
+                    <div class="space-y-6">
+                        <div class="bg-dark-card border border-white/10 rounded-lg p-6">
+                            <p class="text-gray-300 mb-4">Образовательная организация соблюдает требования законодательства в области профилактики экстремистской деятельности.</p>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li>• В учебных материалах отсутствуют экстремистские материалы</li>
+                                <li>• Информационные ресурсы, доступ к которым ограничен судом, не используются</li>
+                                <li>• Проводится мониторинг образовательной среды</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Полезные ресурсы</h3>
+                            <div class="bg-dark-card border border-white/10 rounded-lg p-4">
+                                <ul class="space-y-2 text-gray-300 text-sm">
+                                    <li>• <a href="https://www.fincult.info/" class="text-gold hover:text-gold-light" target="_blank" rel="noopener">Федеральное агентство по делам национальностей</a></li>
+                                    <li>• <a href="#" class="text-gold hover:text-gold-light">Национальный антитеррористический комитет</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="py-12 border-t border-white/10 bg-[#0a1214]">
@@ -332,6 +750,44 @@
 
                 backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
             }
+
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideNav = document.getElementById('side-nav');
+
+            if (menuToggle && sideNav) {
+                menuToggle.addEventListener('click', () => {
+                    sideNav.classList.toggle('open');
+                    const arrow = menuToggle.querySelector('svg');
+                    arrow.classList.toggle('rotate-180');
+                });
+            }
+
+            // Active section highlighting in navigation
+            const sections = document.querySelectorAll('.sveden-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function highlightNav() {
+                const scrollPosition = window.scrollY + 150;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + sectionId) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightNav);
+            highlightNav(); // Initial call
         });
     </script>
 
