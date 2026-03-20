@@ -54,6 +54,24 @@
             box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
             transform: translateY(-2px);
         }
+
+        /* Hero фон с экспертом */
+        .hero-with-expert {
+            position: relative;
+        }
+        .hero-with-expert::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
         
         /* --- ГЛОБАЛЬНАЯ ГЕОМЕТРИЯ --- */
         .global-geo {
@@ -236,7 +254,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section class="hero-with-expert relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center relative z-10 py-20">
             <div class="mb-8">
                 <span class="text-xs md:text-sm uppercase tracking-[0.3em] text-gray-400 border border-white/10 px-4 py-2">
