@@ -50,27 +50,37 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* Tabs navigation */
-        .tabs-container {
-            position: relative;
+        /* Vertical tabs layout */
+        .vertical-tabs {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 1024px) {
+            .vertical-tabs {
+                grid-template-columns: 1fr;
+            }
         }
         .tabs-nav {
             display: flex;
-            overflow-x: auto;
+            flex-direction: column;
             gap: 2px;
-            padding: 4px;
-            background: rgba(13, 24, 27, 0.8);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            scrollbar-width: none;
-            -ms-overflow-style: none;
         }
-        .tabs-nav::-webkit-scrollbar {
-            display: none;
+        @media (max-width: 1024px) {
+            .tabs-nav {
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .tabs-nav::-webkit-scrollbar {
+                display: none;
+            }
         }
         .tab-btn {
-            flex-shrink: 0;
-            padding: 12px 20px;
+            width: 100%;
+            padding: 14px 16px;
             background: transparent;
             border: none;
             color: #9CA3AF;
@@ -78,8 +88,16 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s ease;
+            text-align: left;
             border-radius: 8px;
-            white-space: nowrap;
+        }
+        @media (max-width: 1024px) {
+            .tab-btn {
+                width: auto;
+                flex-shrink: 0;
+                white-space: nowrap;
+                text-align: center;
+            }
         }
         .tab-btn:hover {
             color: #FBE5A8;
@@ -88,6 +106,13 @@
         .tab-btn.active {
             color: #D4AF37;
             background: rgba(212, 175, 55, 0.2);
+            border-left: 3px solid #D4AF37;
+        }
+        @media (max-width: 1024px) {
+            .tab-btn.active {
+                border-left: none;
+                border-bottom: 2px solid #D4AF37;
+            }
         }
         .tab-content {
             display: none;
@@ -177,29 +202,30 @@
         </div>
     </div>
 
-    <!-- Tabs Navigation -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-        <div class="tabs-container">
-            <nav class="tabs-nav" id="tabs-nav">
-                <button class="tab-btn active" data-tab="structure">Структура</button>
-                <button class="tab-btn" data-tab="documents">Документы</button>
-                <button class="tab-btn" data-tab="education">Образование</button>
-                <button class="tab-btn" data-tab="leadership">Руководство</button>
-                <button class="tab-btn" data-tab="staff">Преподаватели</button>
-                <button class="tab-btn" data-tab="facilities">МТО</button>
-                <button class="tab-btn" data-tab="scholarships">Стипендии</button>
-                <button class="tab-btn" data-tab="paid-services">Платные услуги</button>
-                <button class="tab-btn" data-tab="finance">Финансы</button>
-                <button class="tab-btn" data-tab="vacancies">Вакантные места</button>
-                <button class="tab-btn" data-tab="international">Международное</button>
-                <button class="tab-btn" data-tab="nutrition">Питание</button>
-                <button class="tab-btn" data-tab="extremism">Профилактика</button>
-            </nav>
-        </div>
-    </div>
-
-    <!-- Tab Content -->
+    <!-- Vertical Tabs -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="vertical-tabs">
+            <!-- Left sidebar with tabs -->
+            <aside>
+                <nav class="tabs-nav" id="tabs-nav">
+                    <button class="tab-btn active" data-tab="structure">Структура и органы управления</button>
+                    <button class="tab-btn" data-tab="documents">Документы</button>
+                    <button class="tab-btn" data-tab="education">Образование</button>
+                    <button class="tab-btn" data-tab="leadership">Руководство</button>
+                    <button class="tab-btn" data-tab="staff">Педагогический состав</button>
+                    <button class="tab-btn" data-tab="facilities">Материально-техническое обеспечение</button>
+                    <button class="tab-btn" data-tab="scholarships">Стипендии и меры поддержки</button>
+                    <button class="tab-btn" data-tab="paid-services">Платные образовательные услуги</button>
+                    <button class="tab-btn" data-tab="finance">Финансово-хозяйственная деятельность</button>
+                    <button class="tab-btn" data-tab="vacancies">Вакантные места</button>
+                    <button class="tab-btn" data-tab="international">Международное сотрудничество</button>
+                    <button class="tab-btn" data-tab="nutrition">Организация питания</button>
+                    <button class="tab-btn" data-tab="extremism">Профилактика экстремизма</button>
+                </nav>
+            </aside>
+
+            <!-- Right content area -->
+            <div>
         <main class="tab-content active" data-tab="structure">
 
                 <!-- 1. Структура и органы управления -->
@@ -752,6 +778,7 @@
                 </section>
 
             </main>
+            </div>
         </div>
     </div>
 
@@ -843,9 +870,6 @@
                     // Add active class to clicked button and corresponding content
                     button.classList.add('active');
                     document.querySelector(`.tab-content[data-tab="${targetTab}"]`).classList.add('active');
-
-                    // Scroll to top of content
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             });
         });
