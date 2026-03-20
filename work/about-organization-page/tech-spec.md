@@ -1,7 +1,7 @@
 ---
 title: "Tech Spec: Сведения об образовательной организации"
 created: "2026-03-20"
-status: draft
+status: approved
 size: M
 branch: main
 feature: about-organization-page
