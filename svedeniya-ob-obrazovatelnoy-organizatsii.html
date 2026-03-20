@@ -50,25 +50,66 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* Navigation sidebar active state */
-        .nav-link.active {
-            color: #D4AF37;
-            border-left-color: #D4AF37;
+        /* Tabs navigation */
+        .tabs-container {
+            position: relative;
         }
-        /* Mobile menu toggle */
-        .mobile-menu {
+        .tabs-nav {
+            display: flex;
+            overflow-x: auto;
+            gap: 2px;
+            padding: 4px;
+            background: rgba(13, 24, 27, 0.8);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .tabs-nav::-webkit-scrollbar {
             display: none;
         }
-        .mobile-menu.open {
-            display: block;
+        .tab-btn {
+            flex-shrink: 0;
+            padding: 12px 20px;
+            background: transparent;
+            border: none;
+            color: #9CA3AF;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 8px;
+            white-space: nowrap;
         }
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
+        .tab-btn:hover {
+            color: #FBE5A8;
+            background: rgba(212, 175, 55, 0.1);
+        }
+        .tab-btn.active {
+            color: #D4AF37;
+            background: rgba(212, 175, 55, 0.2);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         /* Section spacing */
         .sveden-section {
             scroll-margin-top: 100px;
+        }
+        /* Hide sections not in active tab */
+        .sveden-section {
+            display: none;
+        }
+        .sveden-section.active {
+            display: block;
         }
     </style>
 
@@ -136,43 +177,30 @@
         </div>
     </div>
 
-    <!-- Main content with sidebar navigation -->
+    <!-- Tabs Navigation -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <div class="tabs-container">
+            <nav class="tabs-nav" id="tabs-nav">
+                <button class="tab-btn active" data-tab="structure">Структура</button>
+                <button class="tab-btn" data-tab="documents">Документы</button>
+                <button class="tab-btn" data-tab="education">Образование</button>
+                <button class="tab-btn" data-tab="leadership">Руководство</button>
+                <button class="tab-btn" data-tab="staff">Преподаватели</button>
+                <button class="tab-btn" data-tab="facilities">МТО</button>
+                <button class="tab-btn" data-tab="scholarships">Стипендии</button>
+                <button class="tab-btn" data-tab="paid-services">Платные услуги</button>
+                <button class="tab-btn" data-tab="finance">Финансы</button>
+                <button class="tab-btn" data-tab="vacancies">Вакантные места</button>
+                <button class="tab-btn" data-tab="international">Международное</button>
+                <button class="tab-btn" data-tab="nutrition">Питание</button>
+                <button class="tab-btn" data-tab="extremism">Профилактика</button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Tab Content -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div class="flex flex-col lg:flex-row gap-8">
-
-            <!-- Sidebar Navigation -->
-            <aside class="lg:w-80 flex-shrink-0">
-                <div class="lg:sticky lg:top-28 bg-dark-card border border-white/10 rounded-lg p-4">
-                    <h3 class="text-lg font-semibold mb-4 text-gold">Разделы</h3>
-
-                    <!-- Mobile menu toggle -->
-                    <button id="menu-toggle" class="lg:hidden w-full text-left flex items-center justify-between p-2 border border-white/10 rounded mb-4">
-                        <span>Показать меню</span>
-                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-
-                    <nav id="side-nav" class="mobile-menu lg:block space-y-1">
-                        <a href="#structure" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Структура и органы управления</a>
-                        <a href="#documents" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Документы</a>
-                        <a href="#education" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Образование</a>
-                        <a href="#leadership" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Руководство</a>
-                        <a href="#staff" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Педагогический состав</a>
-                        <a href="#facilities" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Материально-техническое обеспечение</a>
-                        <a href="#scholarships" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Стипендии и меры поддержки</a>
-                        <a href="#paid-services" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Платные образовательные услуги</a>
-                        <a href="#finance" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Финансово-хозяйственная деятельность</a>
-                        <a href="#vacancies" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Вакантные места</a>
-                        <a href="#international" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Международное сотрудничество</a>
-                        <a href="#nutrition" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Организация питания</a>
-                        <a href="#extremism" class="nav-link block py-2 px-3 text-sm border-l-2 border-transparent hover:border-gold hover:text-gold transition">Профилактика экстремизма</a>
-                    </nav>
-                </div>
-            </aside>
-
-            <!-- Main Content -->
-            <main class="flex-1 space-y-8">
+        <main class="tab-content active" data-tab="structure">
 
                 <!-- 1. Структура и органы управления -->
                 <section id="structure" class="sveden-section card">
@@ -208,8 +236,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="documents">
                 <!-- 2. Документы -->
-                <section id="documents" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Документы</h2>
 
                     <div class="space-y-6">
@@ -289,8 +321,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="education">
                 <!-- 3. Образование -->
-                <section id="education" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Образование</h2>
 
                     <div class="space-y-6">
@@ -360,8 +396,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="leadership">
                 <!-- 4. Руководство -->
-                <section id="leadership" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Руководство</h2>
 
                     <div class="space-y-6">
@@ -390,8 +430,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="staff">
                 <!-- 5. Педагогический состав -->
-                <section id="staff" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Педагогический состав</h2>
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -433,8 +477,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="facilities">
                 <!-- 6. Материально-техническое обеспечение -->
-                <section id="facilities" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Материально-техническое обеспечение и оснащённость образовательного процесса</h2>
 
                     <div class="space-y-6">
@@ -486,8 +534,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="scholarships">
                 <!-- 7. Стипендии и меры поддержки -->
-                <section id="scholarships" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Стипендии и меры поддержки обучающихся</h2>
 
                     <div class="bg-dark-card border border-white/10 rounded-lg p-6">
@@ -496,8 +548,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="paid-services">
                 <!-- 8. Платные образовательные услуги -->
-                <section id="paid-services" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Платные образовательные услуги</h2>
 
                     <div class="space-y-6">
@@ -556,8 +612,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="finance">
                 <!-- 9. Финансово-хозяйственная деятельность -->
-                <section id="finance" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Финансово-хозяйственная деятельность</h2>
 
                     <div class="space-y-6">
@@ -606,8 +666,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="vacancies">
                 <!-- 10. Вакантные места -->
-                <section id="vacancies" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Вакантные места для приёма (перевода) обучающихся</h2>
 
                     <div class="bg-dark-card border border-white/10 rounded-lg overflow-hidden">
@@ -629,8 +693,12 @@
                     <p class="text-gray-500 text-sm mt-4">Информация о количестве вакантных мест обновляется ежемесячно.</p>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="international">
                 <!-- 11. Международное сотрудничество -->
-                <section id="international" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Международное сотрудничество</h2>
 
                     <div class="bg-dark-card border border-white/10 rounded-lg p-6">
@@ -639,8 +707,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="nutrition">
                 <!-- 12. Организация питания -->
-                <section id="nutrition" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Организация питания в образовательной организации</h2>
 
                     <div class="bg-dark-card border border-white/10 rounded-lg p-6">
@@ -649,8 +721,12 @@
                     </div>
                 </section>
 
+                </section>
+            </main>
+
+            <main class="tab-content" data-tab="extremism">
                 <!-- 13. Профилактика экстремизма -->
-                <section id="extremism" class="sveden-section card">
+                <section class="card">
                     <h2 class="text-2xl font-serif text-gold-gradient mb-6">Профилактика экстремизма</h2>
 
                     <div class="space-y-6">
@@ -751,43 +827,27 @@
                 backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
             }
 
-            // Mobile menu toggle
-            const menuToggle = document.getElementById('menu-toggle');
-            const sideNav = document.getElementById('side-nav');
+            // Tabs functionality
+            const tabsNav = document.getElementById('tabs-nav');
+            const tabButtons = tabsNav.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
 
-            if (menuToggle && sideNav) {
-                menuToggle.addEventListener('click', () => {
-                    sideNav.classList.toggle('open');
-                    const arrow = menuToggle.querySelector('svg');
-                    arrow.classList.toggle('rotate-180');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    document.querySelector(`.tab-content[data-tab="${targetTab}"]`).classList.add('active');
+
+                    // Scroll to top of content
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
-            }
-
-            // Active section highlighting in navigation
-            const sections = document.querySelectorAll('.sveden-section');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            function highlightNav() {
-                const scrollPosition = window.scrollY + 150;
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
-
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === '#' + sectionId) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', highlightNav);
-            highlightNav(); // Initial call
+            });
         });
     </script>
 
