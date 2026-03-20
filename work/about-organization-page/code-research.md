@@ -700,17 +700,447 @@ animation: {
 
 ---
 
-## 10. Ключевые выводы
+## 10. Технические требования для новой страницы
 
-1. **Единая дизайн-система:** Все цвета, отступы, шрифты стандартизированы
+### 10.1. OG теги (Open Graph) - НОВОЕ
+
+**Текущее состояние:** OG теги НЕ реализованы на index.html
+
+**Что нужно добавить:**
+```html
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Сведения об образовательной организации | Школа «Фрегат»">
+<meta property="og:description" content="Лицензия ДПО № Л035‑01217‑26/03829175. Полные сведения об образовательной организации, программах обучения, преподавателях и материально-технической базе.">
+<meta property="og:url" content="https://fregat-school.ru/svedeniya-ob-obrazovatelnoy-organizatsii.html">
+<meta property="og:image" content="https://z-cdn-media.chatglm.cn/files/13817077-3fd8-4076-ab8b-31702a8b0e59.png">
+<meta property="og:site_name" content="Школа «Фрегат»">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Логотип Школы «Фрегат»">
+
+<!-- Twitter Card (дополнительно) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Сведения об образовательной организации | Школа «Фрегат»">
+<meta name="twitter:description" content="Лицензия ДПО № Л035‑01217‑26/03829175. Полные сведения об образовательной организации.">
+<meta name="twitter:image" content="https://z-cdn-media.chatglm.cn/files/13817077-3fd8-4076-ab8b-31702a8b0e59.png">
+```
+
+**Где добавить:** В секцию `<head>` после meta description
+
+### 10.2. Schema.org CollegeOrUniversity - РАСШИРЕНО
+
+**Текущая реализация на index.html:**
+- `@type: "Course"` для описания курса
+- `@type: "Organization"` для провайдера
+
+**Новая реализация для about-page:**
+```html
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollegeOrUniversity",
+    "name": "Школа тендерного обучения «Фрегат»",
+    "url": "https://fregat-school.ru",
+    "logo": "https://z-cdn-media.chatglm.cn/files/13817077-3fd8-4076-ab8b-31702a8b0e59.png",
+    "legalName": "ООО «ФРЕГАТ»",
+    "taxId": "ИНН_КОМПАНИИ",
+    "vatId": "КПП_КОМПАНИИ",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "УЛИЦА, ДОМ",
+        "addressLocality": "ГОРОД",
+        "addressRegion": "ОБЛАСТЬ",
+        "postalCode": "ИНДЕКС",
+        "addressCountry": "RU"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7-XXX-XXX-XX-XX",
+        "email": "info@fregat-school.ru",
+        "contactType": "customer service",
+        "areaServed": "RU",
+        "availableLanguage": ["Russian"]
+    },
+    "sameAs": [
+        "https://vk.com/fregat",
+        "https://telegram.me/fregat"
+    ],
+    "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Professional License",
+        "name": "Лицензия на право ведения образовательной деятельности",
+        "licenseNumber": "Л035‑01217‑26/03829175"
+    },
+    "offers": [
+        {
+            "@type": "Course",
+            "name": "Тендеры с нуля: Профессия Тендерный специалист",
+            "description": "Курс обучения тендерному делу с нуля",
+            "educationalLevel": "Professional Training",
+            "provider": {
+                "@type": "Organization",
+                "name": "Школа «Фрегат»"
+            }
+        }
+    ]
+}
+</script>
+```
+
+### 10.3. Поисковая иконка в Header - НОВОЕ
+
+**Текущее состояние:** Иконка поиска отсутствует в header на index.html
+
+**Что нужно добавить в header:**
+```html
+<!-- Перед CTA кнопкой -->
+<div class="flex items-center gap-4">
+    <!-- Иконка поиска (заглушка) -->
+    <button class="p-2 text-gray-300 hover:text-gold transition" aria-label="Поиск">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+    </button>
+    <!-- CTA кнопка -->
+    <a href="#cta-form" class="btn-gold px-6 py-3 rounded text-sm tracking-wide">Записаться</a>
+</div>
+```
+
+**JavaScript (заглушка):**
+```javascript
+// Поиск (заглушка - клик без действия)
+document.querySelector('[aria-label="Поиск"]').addEventListener('click', () => {
+    // Заглушка - в будущем здесь будет поиск
+    console.log('Поиск будет реализован в Phase 2');
+});
+```
+
+### 10.4. Breadcrumb компонент - РАСШИРЕНО
+
+**Текущее состояние:** Стили для breadcrumb существуют в styles.css, но компонент не реализован
+
+**Реализация breadcrumb:**
+```html
+<!-- После header, перед main content -->
+<nav class="breadcrumb max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Breadcrumb">
+    <ol class="flex items-center gap-2">
+        <li>
+            <a href="index.html" class="breadcrumb-item hover:text-gold flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                Главная
+            </a>
+        </li>
+        <li>
+            <span class="breadcrumb-separator" aria-hidden="true">→</span>
+        </li>
+        <li>
+            <span class="breadcrumb-item active" aria-current="page">Сведения об образовательной организации</span>
+        </li>
+    </ol>
+</nav>
+```
+
+---
+
+## 11. Шаринг компонентов между страницами
+
+### 11.1. Компоненты для копирования
+
+**Полностью копируются:**
+1. `<head>` секция (с адаптацией meta тегов)
+2. Глобальные UI элементы:
+   - `<div id="scroll-progress"></div>`
+   - `<div id="back-to-top">...</div>`
+   - `<div class="vertical-brand">...</div>`
+   - `<div class="global-geo">...</div>`
+3. Footer (без изменений)
+4. JavaScript скрипты
+
+**Адаптируются:**
+1. Header:
+   - Обновить ссылки навигации (добавить `index.html#`)
+   - Добавить иконку поиска
+   - Сохранить структуру и стили
+
+**Новые компоненты:**
+1. Breadcrumb (использовать существующие стили)
+2. Секции с контентом организации
+
+### 11.2. Стратегия копирования компонентов
+
+**Вариант 1: Прямое копирование (Phase 1)**
+- Скопировать header/footer из index.html
+- Быстрая реализация
+- Дублирование кода
+- Рекомендуется для текущей задачи
+
+**Вариант 2: Компоненты через JavaScript (Phase 2)**
+- Использовать JavaScript для инъекции компонентов
+- Единая точка управления
+- Сложнее в реализации
+- План для WordPress миграции
+
+**Вариант 3: SSI или PHP includes (Phase 2)**
+- Server-side includes
+- Требует серверной части
+- Будет реализовано на WordPress
+
+**Рекомендация:** Использовать Вариант 1 для текущей задачи
+
+### 11.3. Путь к файлу
+
+**Согласно user-spec:**
+- Имя файла: `svedeniya-ob-obrazovatelnoy-organizatsii.html`
+- Расположение: `/Users/artemsuazov/Documents/Products/fregat/svedeniya-ob-obrazovatelnoy-organizatsii.html`
+
+**Примечание:** Файл должен находиться в корне проекта рядом с `index.html`
+
+---
+
+## 12. Контент-стратегия (с заглушками)
+
+### 12.1. Структура контента
+
+**H1 Заголовок:**
+```
+Сведения об образовательной организации
+```
+
+**Секции с placeholder контентом:**
+
+1. **Об организации**
+   - Полное наименование: ООО «Фрегат»
+   - История создания: [PLACEHOLDER]
+   - Миссия: [PLACEHOLDER]
+
+2. **Лицензия и документы**
+   - Номер лицензии: Л035‑01217‑26/03829175
+   - Дата выдачи: 25.11.2025
+   - Скан лицензии: [PLACEHOLDER IMAGE]
+
+3. **Контактная информация**
+   - Юридический адрес: [PLACEHOLDER]
+   - Фактический адрес: [PLACEHOLDER]
+   - Телефон: [PLACEHOLDER]
+   - Email: [PLACEHOLDER]
+
+4. **Реквизиты**
+   - ИНН: [PLACEHOLDER]
+   - КПП: [PLACEHOLDER]
+   - ОГРН: [PLACEHOLDER]
+   - Р/с: [PLACEHOLDER]
+   - Банк: [PLACEHOLDER]
+   - БИК: [PLACEHOLDER]
+
+5. **Образовательные программы**
+   - «Тендеры с нуля»: [PLACEHOLDER]
+   - Уровень образования: ДПО
+   - Форма обучения: онлайн
+
+6. **Преподавательский состав**
+   - 2-3 placeholder-профиля преподавателей
+
+7. **Материально-техническая база**
+   - Описание платформы: [PLACEHOLDER]
+   - Оборудование: [PLACEHOLDER]
+
+### 12.2. Placeholder паттерны
+
+**Для текстовых placeholder:**
+```html
+<p class="text-gray-500 italic">[ЗАГЛУШКА: описание]</p>
+```
+
+**Для изображений:**
+```html
+<div class="bg-gray-700 border border-dashed border-gray-500 rounded-lg p-8 text-center">
+    <p class="text-gray-400">[PLACEHOLDER: изображение]</p>
+</div>
+```
+
+**Для данных:**
+```html
+<span class="text-gray-400">[PLACEHOLDER]</span>
+```
+
+---
+
+## 13. Валидация и тестирование
+
+### 13.1. HTML валидация
+
+**Инструменты:**
+- W3C Markup Validation Service: https://validator.w3.org/
+- HTML5 Validator
+
+**Проверки:**
+- [ ] Валидный HTML5
+- [ ] Семантические теги (`<header>`, `<main>`, `<section>`, `<footer>`)
+- [ ] ARIA атрибуты для accessibility
+- [ ] Alt тексты для изображений
+
+### 13.2. Адаптивность
+
+**Брейкпоинты Tailwind:**
+- `sm`: 640px
+- `md`: 768px
+- `lg`: 1024px
+- `xl`: 1280px
+
+**Проверки:**
+- [ ] Mobile (< 640px)
+- [ ] Tablet (640px - 1024px)
+- [ ] Desktop (> 1024px)
+
+### 13.3. Schema.org валидация
+
+**Инструменты:**
+- Google Rich Results Test: https://search.google.com/test/rich-results
+- Schema.org Validator: https://validator.schema.org/
+
+**Проверки:**
+- [ ] Валидный JSON-LD
+- [ ] Все обязательные поля заполнены
+- [ ] Тип `CollegeOrUniversity` корректен
+
+### 13.4. OG теги валидация
+
+**Инструменты:**
+- Open Graph Debugger: https://www.opengraph.xyz/
+- Facebook Sharing Debugger: https://developers.facebook.com/tools/debug/
+
+**Проверки:**
+- [ ] Все OG теги присутствуют
+- [ ] Изображение корректного размера (1200x630)
+- [ ] Заголовок и описание не превышают лимиты
+
+---
+
+## 14. Технические ограничения и риски
+
+### 14.1. Ограничения Phase 1
+
+**Что НЕ реализуется:**
+1. Динамический контент (всё статично)
+2. Админка для управления контентом
+3. Поиск по сайту (только заглушка иконки)
+4. Мобильная навигация (гамбургер-меню)
+5. Формы с отправкой данных
+
+**Что реализуется с заглушками:**
+1. Все текстовые данные (PLACEHOLDER)
+2. Изображения (PLACEHOLDER)
+3. Документы (PLACEHOLDER)
+
+### 14.2. Риски миграции
+
+**WordPress миграция (Phase 2):**
+- Header/Footer станут темой WordPress
+- Контент будет управляться через CMS
+- Schema.org будет генерироваться динамически
+- OG теги будут управляться SEO плагином
+
+**Совет:** Структура HTML должна быть подготовлена для легкой миграции на WordPress
+
+---
+
+## 15. Чеклист реализации
+
+### 15.1. Подготовка
+
+- [ ] Создать файл `svedeniya-ob-obrazovatelnoy-organizatsii.html` в корне проекта
+- [ ] Скопировать `<head>` из index.html
+- [ ] Обновить title: "Сведения об образовательной организации | Школа «Фрегат»"
+- [ ] Обновить meta description
+- [ ] Добавить OG теги (включая Twitter Card)
+- [ ] Обновить Schema.org на `CollegeOrUniversity`
+
+### 15.2. Компоненты
+
+- [ ] Скопировать глобальные UI элементы (progress, back-to-top, geo, vertical-brand)
+- [ ] Скопировать Header из index.html
+- [ ] Адаптировать навигацию (добавить `index.html#` к ссылкам)
+- [ ] Добавить иконку поиска в Header
+- [ ] Добавить JavaScript обработчик для поиска (заглушка)
+- [ ] Реализовать Breadcrumb компонент
+
+### 15.3. Контент
+
+- [ ] Создать секцию "Об организации" с placeholder
+- [ ] Создать секцию "Лицензия и документы" с placeholder
+- [ ] Создать секцию "Контакты" с placeholder
+- [ ] Создать секцию "Реквизиты" с placeholder
+- [ ] Создать секцию "Образовательные программы" с placeholder
+- [ ] Создать секцию "Преподаватели" с placeholder
+- [ ] Создать секцию "Материально-техническая база" с placeholder
+
+### 15.4. Footer
+
+- [ ] Скопировать Footer из index.html
+- [ ] Убедиться, что ссылка на "Сведения об организации" ведет на новый файл
+
+### 15.5. JavaScript
+
+- [ ] Скопировать scroll animation код
+- [ ] Скопировать progress bar код
+- [ ] Скопировать back-to-top код
+- [ ] Добавить обработчик для поиска (заглушка)
+
+### 15.6. Тестирование
+
+- [ ] Проверить HTML валидность
+- [ ] Проверить адаптивность (mobile, tablet, desktop)
+- [ ] Проверить Schema.org валидность
+- [ ] Проверить OG теги
+- [ ] Проверить все ссылки
+- [ ] Проверить breadcrumb навигацию
+
+---
+
+## 16. Ключевые выводы
+
+### 16.1. Сильные стороны
+
+1. **Единая дизайн-система:** Все цвета, отступы, шрифты стандартизированы в `styles.css`
 2. **Tailwind + Custom CSS:** Гибкая система для быстрой вёрстки
-3. **Компонентный подход:** Карточки, кнопки, секции переиспользуются
+3. **Компонентный подход:** Карточки, кнопки, секции легко переиспользуются
 4. **Анимации:** Готовый Intersection Observer для появления контента
 5. **Адаптивность:** Mobile-first подход с Tailwind брейкпоинтами
-6. **Schema.org:** Внедрена микроразметка для SEO
+6. **Schema.org:** Опыт внедрения микроразметки на index.html
+7. **Готовые стили:** Breadcrumb стили уже существуют в `styles.css`
+
+### 16.2. Новые элементы для реализации
+
+1. **OG теги:** Не реализованы на index.html, нужно добавить с нуля
+2. **Иконка поиска:** Отсутствует в header, нужно добавить
+3. **Breadcrumb:** Стили есть, компонент не реализован
+4. **CollegeOrUniversity schema:** Новый тип Schema.org для организации
+
+### 16.3. Оценка трудозатрат
+
+- **Копирование компонентов:** 1 час
+- **Адаптация header и добавление поиска:** 30 минут
+- **Реализация breadcrumb:** 15 минут
+- **Создание секций с placeholder:** 2-3 часа
+- **Schema.org и OG теги:** 1 час
+- **Тестирование и валидация:** 1 час
+- **Итого:** 5-6.5 часов (соответствует оценке в user-spec)
+
+### 16.4. Следующие шаги
+
+1. Создать файл `svedeniya-ob-obrazovatelnoy-organizatsii.html`
+2. Скопировать базовую структуру из `index.html`
+3. Адаптировать компоненты согласно чеклисту
+4. Реализовать placeholder контент
+5. Провести валидацию и тестирование
+6. Обновить футер на `index.html` для ссылки на новую страницу
 
 **Новая страница будет:**
 - Консистентной с главным лендингом
 - Быстро реализуемой с помощью готовых компонентов
-- SEO-оптимизированной с помощью Schema.org
+- SEO-оптимизированной с помощью Schema.org и OG тегов
 - Адаптивной для всех устройств
+- Готовой к миграции на WordPress в Phase 2
