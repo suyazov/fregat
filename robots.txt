@@ -1,0 +1,18 @@
+# robots.txt для школы «Фрегат»
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://фрегат.рф/sitemap.xml
+
+# Запретить индексацию служебных папок
+Disallow: /.archive/
+Disallow: /work/
+Disallow: /.git/
+Disallow: /.claude/
+
+# Запретить индексацию временных файлов
+Disallow: /*.tmp$
+Disallow: /*.bak$
+Disallow: /readme.md
