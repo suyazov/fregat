@@ -113,22 +113,6 @@ h4 { font-size: var(--text-xl); }
     transform: translateY(-2px);
 }
 
-/* Размеры кнопок */
-.btn-sm {
-    padding: var(--spacing-xs) var(--spacing-md);
-    font-size: var(--text-sm);
-}
-
-.btn-md {
-    padding: var(--spacing-sm) var(--spacing-lg);
-    font-size: var(--text-base);
-}
-
-.btn-lg {
-    padding: var(--spacing-md) var(--spacing-xl);
-    font-size: var(--text-lg);
-}
-
 /* === КАРТОЧКИ === */
 .card {
     background-color: var(--color-bg-card);
@@ -144,22 +128,9 @@ h4 { font-size: var(--text-xl); }
     transform: translateY(-5px);
 }
 
-.card-featured {
-    border: 2px solid var(--color-gold);
-    background: linear-gradient(to bottom, rgba(212, 175, 55, 0.1), transparent);
-}
-
 /* === СЕКЦИИ === */
 .section {
     padding: var(--spacing-3xl) 0;
-}
-
-.section-sm {
-    padding: var(--spacing-2xl) 0;
-}
-
-.section-xs {
-    padding: var(--spacing-xl) 0;
 }
 
 /* === ФОРМЫ === */
@@ -342,22 +313,4 @@ input:focus {
     gap: 0.5rem;
     padding: var(--spacing-sm) 0;
     font-size: var(--text-sm);
-}
-
-.breadcrumb-item {
-    color: var(--color-text-muted);
-    transition: color var(--duration-base);
-}
-
-.breadcrumb-item:hover {
-    color: var(--color-gold);
-}
-
-.breadcrumb-item.active {
-    color: var(--color-text-secondary);
-}
-
-.breadcrumb-separator {
-    color: var(--color-gold);
-    opacity: 0.5;
 }
