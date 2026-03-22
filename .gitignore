@@ -38,6 +38,14 @@ logs/
 # Документация проекта (отдельный репозиторий: suyazov/fregat-docs)
 .claude/
 
-# Work directory (может содержать чувствительные данные)
-work/*/logs/
-work/*/decisions.md
+# Work directory (служебные файлы разработки — в fregat-docs)
+work/
+
+# Исходные фото (используем оптимизированные в assets/)
+*.png
+!assets/**/*.png
+!favicon.svg
+
+# Docker и dev-инструменты
+docker-compose.yml
+*.code-workspace
