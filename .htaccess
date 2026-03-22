@@ -1,0 +1,47 @@
+# .htaccess для школы «Фрегат»
+
+# Кодировка по умолчанию
+AddDefaultCharset UTF-8
+
+# Сжатие
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Кеширование статических файлов
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+</IfModule>
+
+# Редирект с index.html на корень (опционально)
+# DirectoryIndex index.html
+# RewriteEngine On
+# RewriteCond %{THE_REQUEST} /index\.html [NC]
+# RewriteRule ^(.*?)index\.html$ /$1 [L,R=301]
+
+# Защита служебных файлов
+<FilesMatch "(^\.git|^\.claude|^readme\.md|^\.htaccess)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# CORS для шрифтов
+<IfModule mod_headers.c>
+    <FilesMatch "\.(eot|otf|ttc|ttf|woff|woff2)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+
+# Безопасность HTTP заголовков
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
