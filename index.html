@@ -657,7 +657,7 @@
             </h2>
 
             <div class="bg-[#0d181b] border border-white/10 rounded-2xl p-8 md:p-12 animate-section">
-                <img src="assets/images/farida.jpg" alt="Фарида — основатель Школы Фрегат" class="w-40 h-40 rounded-full mx-auto mb-6 object-cover border-2 border-gold/30">
+                <img src="assets/images/farida.jpg" alt="Фарида — основатель Школы Фрегат" class="w-40 h-40 rounded-full mx-auto mb-6 object-cover object-top border-2 border-gold/30">
                 <h3 class="text-2xl font-bold mb-2 text-white">Фарида</h3>
                 <p class="text-gold-gradient text-sm mb-6 uppercase tracking-wider">Основатель школы, главный эксперт</p>
 
@@ -692,12 +692,12 @@
 
     <!-- FAQ -->
     <section id="faq" class="py-24 border-t border-white/5 bg-[#0d181b]">
-        <div class="max-w-3xl mx-auto px-6">
+        <div class="max-w-5xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white animate-section">
                 Частые <span class="text-gold-gradient">вопросы</span>
             </h2>
-            
-            <div class="space-y-4 animate-section">
+
+            <div class="grid md:grid-cols-2 gap-4 animate-section">
                 <div class="faq-item border-gold bg-[#142125]">
                     <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
                         <span>Нужен ли опыт работы для обучения?</span>
@@ -964,65 +964,75 @@
             <div class="grid md:grid-cols-3 gap-6 text-sm text-gray-300 mt-12">
                 <div class="bg-[#142125] rounded-lg p-4 text-center">
                     <div class="text-gold mb-2">💎 Бонусы</div>
-                    <p>при единовременной оплате</p>
+                    <p class="text-xs">Скидка 5% при единовременной оплате</p>
                 </div>
                 <div class="bg-[#142125] rounded-lg p-4 text-center">
                     <div class="text-gold mb-2">📊 Рассрочка</div>
-                    <p>Способы оплаты по частям</p>
+                    <p class="text-xs">Разбейте оплату на 2-3 части без переплаты</p>
                 </div>
                 <div class="bg-[#142125] rounded-lg p-4 text-center">
                     <div class="text-gold mb-2">📝 Налоговый вычет</div>
-                    <p>Верните до 13%. Поможем оформить документы</p>
+                    <p class="text-xs">Верните до 13% стоимости обучения. Поможем с документами</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Нужна помощь на работе? -->
+    <!-- Поддержка на новом месте -->
     <section class="py-24 border-t border-white/5 bg-[#0d181b]">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white animate-section">
-                Нужна помощь на работе?
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-white animate-section">
+                Поддержка на новом месте
             </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-3xl mx-auto">
+                Новичок на работе часто знает, что надо делать, но не знает как. Сроки подходят, а спросить не у кого.
+                Мы будем рядом, чтобы отвечать на вопросы и помогать работать без досадных ошибок.
+            </p>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Для бизнеса -->
-                <div class="bg-[#142125] border border-white/10 rounded-xl p-8 transition hover:border-gold/50 animate-section">
+                <!-- Сопровождение -->
+                <div class="bg-[#142125] border border-white/10 rounded-xl p-8 transition hover:border-gold/50 animate-section flex flex-col">
                     <div class="w-14 h-14 bg-gold/20 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Для бизнеса</h3>
-                    <p class="text-gray-400 mb-6">Нужен тендерный специалист в штат? Подберём выпускников курса для работы в вашей компании.</p>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Бесплатный подбор кандидатов</li>
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Гарантия качества</li>
+                    <h3 class="text-xl font-bold mb-3 text-white">Сопровождение</h3>
+                    <p class="text-gray-400 mb-6">Для вашей уверенности в новой работе с закупками. Ответим на вопросы, разберём контракты, подробно консультируем.</p>
+                    <ul class="space-y-2 text-sm text-gray-300 flex-1">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>4 сессии по 60 минут</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Связь по e-mail</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Разбор ваших кейсов</li>
                     </ul>
+                    <a href="#cta-form" class="btn-gold block text-center w-full py-3 rounded-lg font-medium mt-auto">Узнать подробнее</a>
                 </div>
 
-                <!-- Поддержка специалистов -->
-                <div class="bg-[#142125] border border-white/10 rounded-xl p-8 transition hover:border-gold/50 animate-section">
+                <!-- Наставничество -->
+                <div class="bg-[#142125] border border-white/10 rounded-xl p-8 transition hover:border-gold/50 animate-section flex flex-col">
+                    <div class="w-14 h-14 bg-gold/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Наставничество</h3>
+                    <p class="text-gray-400 mb-6">Наставник на связи ежедневно. Поможем размещать закупки или участвовать в тендерах без ошибок.</p>
+                    <ul class="space-y-2 text-sm text-gray-300 flex-1">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>6 сессий по 90 минут</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Ежедневная связь</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Проверка документов</li>
+                    </ul>
+                    <a href="#cta-form" class="btn-gold block text-center w-full py-3 rounded-lg font-medium mt-auto">Узнать подробнее</a>
+                </div>
+
+                <!-- Разовая помощь -->
+                <div class="bg-[#142125] border border-white/10 rounded-xl p-8 transition hover:border-gold/50 animate-section flex flex-col">
                     <div class="w-14 h-14 bg-gold/20 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Повышение квалификации</h3>
-                    <p class="text-gray-400 mb-6">Обучите текущих сотрудников тендерам. Корпоративные программы и скидки.</p>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Скидки до 20%</li>
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Удостоверение о повышении квалификации</li>
-                    </ul>
-                </div>
-
-                <!-- Консалтинг -->
-                <div class="bg-[#142125] border border-white/10 rounded-xl p-8 transition hover:border-gold/50 animate-section">
-                    <div class="w-14 h-14 bg-gold/20 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Правовая защита</h3>
-                    <p class="text-gray-400 mb-6">Поможем с обжалованием и защитой прав при участии в тендерах.</p>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Анализ отклонений</li>
+                    <h3 class="text-xl font-bold mb-3 text-white">Разовая помощь</h3>
+                    <p class="text-gray-400 mb-6">Решим ваши разовые задачи: разберём документацию, поможем найти контракт, проведём экспертизу.</p>
+                    <ul class="space-y-2 text-sm text-gray-300 flex-1">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Разбор непонятных моментов</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Помощь с контрактом</li>
                         <li class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Обжалование в ФАС</li>
                     </ul>
+                    <a href="#cta-form" class="btn-gold block text-center w-full py-3 rounded-lg font-medium mt-auto">Узнать подробнее</a>
                 </div>
             </div>
         </div>
