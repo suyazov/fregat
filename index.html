@@ -640,250 +640,245 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="py-24 border-t border-white/5 bg-[#0d181b]">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white animate-section">
+    <section id="faq" class="py-24 border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-white animate-section">
                 Частые <span class="text-gold-gradient">вопросы</span>
             </h2>
+            <p class="text-center text-gray-400 mb-12 animate-section">Выберите категорию или кликните на вопрос</p>
 
-            <div class="grid md:grid-cols-2 gap-4 animate-section">
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Нужен ли опыт работы для обучения?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <!-- Категории -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10 animate-section">
+                <button onclick="showFaqCategory('course')" class="faq-tab active px-5 py-2 rounded-full text-sm font-medium transition-all" data-category="course">О курсе</button>
+                <button onclick="showFaqCategory('start')" class="faq-tab px-5 py-2 rounded-full text-sm font-medium transition-all" data-category="start">Для новичков</button>
+                <button onclick="showFaqCategory('payment')" class="faq-tab px-5 py-2 rounded-full text-sm font-medium transition-all" data-category="payment">Оплата</button>
+                <button onclick="showFaqCategory('study')" class="faq-tab px-5 py-2 rounded-full text-sm font-medium transition-all" data-category="study">Обучение</button>
+                <button onclick="showFaqCategory('all')" class="faq-tab px-5 py-2 rounded-full text-sm font-medium transition-all" data-category="all">Все</button>
+            </div>
+
+            <!-- Вопросы -->
+            <div class="space-y-3 animate-section" id="faq-container">
+                <!-- О курсе -->
+                <div class="faq-item" data-category="course">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Кому подойдёт курс?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Нет, программа рассчитана на новичков. Мы обучаем с полного нуля, объясняя сложные термины простым языком.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Тем, кто хочет работать с госзакупками: предпринимателям, руководителям, новичкам без опыта.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Какой документ я получу после обучения?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="course">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Сколько длится обучение?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Вы получите диплом о профессиональной переподготовке установленного образца.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Можно ли совмещать обучение с работой?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Да, уроки доступны в записи 24/7. Вы можете учиться вечером или в выходные. Средняя нагрузка — 3-4 часа в неделю.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">1 месяц. За это время вы научитесь участвовать в тендерах самостоятельно.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Кому подходит курс?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="course">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Какой документ получу?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Курс подходит новичкам без опыта, предпринимателям, руководителям и всем, кто хочет работать в сфере госзакупок.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Сколько длится обучение?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Обучение длится 1 месяц. За это время вы освоите все необходимые навыки для работы тендерным специалистом.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Удостоверение о повышении квалификации с бессрочной лицензией.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Какие документы выдаются?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="course">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Есть ли практика?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Выдаём удостоверение о повышении квалификации и сертификат об окончании курса. Документы котируются у работодателей.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Есть ли практика на курсе?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Да, 80% курса — практика. Вы будете работать на реальных тендерных площадках (ЕИС, Сбербанк-АСТ, РТС-тендер, ЕЭТП) под руководством эксперта.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Да, 80% — это работа на реальных площадках: ЕИС, Сбербанк-АСТ, РТС-тендер.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Помогаете ли с трудоустройством?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="course">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Помогаете с трудоустройством?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Да, помогаем с резюме, проводим собеседования и предлагаем стажировки в компаниях-партнёрах, включая ООО «Фрегат» и ООО «УКЭ».</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Какие требования для поступления?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Требований нет. Подходит любому человеку с базовой компьютерной грамотностью. Обучение с полного нуля.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Да: помогаем с резюме, проводим собеседования, предлагаем стажировки.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Можно ли оплатить частями?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="course">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Смогу ли участвовать в тендерах после курса?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Да, доступна оплата по частям. Условия рассройки уточняйте у менеджера при записи.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Есть ли налоговый вычет?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Да, вы можете вернуть 13% от стоимости обучения через налоговый вычет. Поможем с оформлением документов.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Да, сможете самостоятельно подавать заявки и участвовать в торгах.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Что входит в стоимость?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <!-- Для новичков -->
+                <div class="faq-item" data-category="start">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Нужен ли опыт?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">В стоимость входят все уроки, практические задания, проверка домашних заданий, доступ к библиотеке шаблонов и удостоверение о повышении квалификации.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Смогу ли я участвовать в тендерах после курса?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Да, после курса вы сможете самостоятельно участвовать в государственных и коммерческих торгах от начала до конца.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Нет, учим с нуля. Объясняем всё простым языком без сложных терминов.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Как начать, если нет опыта в тендерах?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="start">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Как начать без опыта?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Это не страшно, всему обучим. Для тех, кто совсем без опыта, мы проводим отдельный созвон, где показываем, как искать закупки и как работать с площадками.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Где искать тендеры?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Ищем на zakupki.gov.ru, в агрегаторах и на коммерческих площадках. Важно смотреть регион, логику закупки, количество, сроки и требования.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Проведём отдельный созвон: покажем, как искать закупки и работать с площадками.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Как понять, что закупка подходит?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="start">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Где искать тендеры?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Смотрите регион, логику закупки, количество, сроки и требования. Если закупка не отображается — проверьте фильтры и вход в личный кабинет.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Как определить, подходит ли ниша?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Некоторые ниши узкие. Нужно расширять поиск: соседние регионы, смежные категории, поставки вместо работ. Иногда нишу нужно корректировать.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">На zakupki.gov.ru, в агрегаторах и на коммерческих площадках.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Когда нужно делать запрос разъяснений?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="start">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Как понять, что закупка подходит?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Запрос делается, если в ТЗ нет ключевых характеристик. Пишем в свободной форме: номер закупки, вопросы, фото при необходимости.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Как считать рентабельность?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Минимум 10–15%. На крупных суммах можно снижать до 6–9%, но редко. Если используем кредитные средства — ниже 15% не опускаемся.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Смотрите регион, сроки, сумму и требования. Покажем это на практике.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Что делать, если закупка слишком сложная?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="start">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Какую нишу выбрать?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Новичкам лучше брать простые закупки с понятными характеристиками и количеством. Сложные закупки оставляем на потом.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Как проходят созвоны и вебинары?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Созвоны проходят 2 раза в неделю. Вебинары — по расписанию, запись всегда предоставляется. Подключаться можно с телефона.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Начинайте со знакомой сферы. Можно расширять поиск: соседние регионы, смежные категории.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Что делать, если не успеваю выполнить задание?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="start">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Какая рентабельность нормальная?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Да, можно сдать позже. Но дедлайны важны — они формируют рабочую дисциплину. При уважительной причине срок продлевается.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Как попасть на стажировку или в команду?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Те, кто выполняет задания, проявляет активность и показывает результат — могут быть приглашены на стажировку или в команду.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Минимум 10–15%. На крупных контрактах можно ниже, но с осторожностью.</div>
                     </div>
                 </div>
 
-                <div class="faq-item border-gold bg-[#142125]">
-                    <div class="faq-question p-6 flex justify-between items-center text-white font-medium">
-                        <span>Что делать, если не могу подключиться к вебинару?</span>
-                        <svg class="w-5 h-5 text-gold transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item" data-category="start">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Брать сложные закупки новичку?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="faq-answer px-6 text-gray-400 text-sm">
-                        <div class="pb-6">Нужно зайти через аккаунт Яндекса или обновить страницу. Если не получается — запись будет доступна позже.</div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Нет. Начните с простых: понятные требования, небольшая сумма, меньше конкурентов.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="start">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Когда делать запрос разъяснений?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Если в техзадании нет важных данных — пишите заказчику. Покажем, как правильно.</div>
+                    </div>
+                </div>
+
+                <!-- Оплата -->
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Можно оплатить частями?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Да, есть рассрочка. Уточните условия при записи.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Работает ли налоговый вычет?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Да, вернёте 13% от стоимости. Поможем оформить документы.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Что входит в стоимость?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Все уроки, практика, проверка заданий, библиотека шаблонов и удостоверение.</div>
+                    </div>
+                </div>
+
+                <!-- Обучение -->
+                <div class="faq-item" data-category="study">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Можно совмещать с работой?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Да. Уроки доступны 24/7, нагрузка — 3–4 часа в неделю.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="study">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Как проходят вебинары?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">2 раза в неделю по расписанию. Запись всегда доступна.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="study">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Не успеваю сдать задание</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Можно сдать позже. Дедлайны помогают дисциплине, но при уважительной причине продлеваем.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="study">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Не могу подключиться к вебинару</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Обновите страницу или зайдите через аккаунт Яндекса. Запись будет доступна позже.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="study">
+                    <div class="faq-question flex justify-between items-center p-4 rounded-lg text-white cursor-pointer hover:bg-white/5 transition">
+                        <span class="pr-8">Как попасть на стажировку?</span>
+                        <svg class="w-5 h-5 text-gold-light transform transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="faq-answer px-4 text-gray-400 text-sm overflow-hidden transition-all">
+                        <div class="pb-4 pt-2">Выполняйте задания, проявляйте активность — лучшие студенты получают приглашение.</div>
                     </div>
                 </div>
             </div>
@@ -996,7 +991,10 @@
             <!-- Бонусы, рассрочка, налоговый вычет -->
             <div class="grid md:grid-cols-3 gap-6 mt-12">
                 <div class="bg-[#142125] border border-white/10 rounded-xl p-6 hover:border-gold/30 transition">
-                    <div class="text-gold-gradient text-2xl font-bold mb-3">💎 Бонусы</div>
+                    <div class="flex items-center gap-2 text-gold-gradient text-2xl font-bold mb-3">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
+                        Бонусы
+                    </div>
                     <p class="text-white mb-3">Скидка 5% при единовременной оплате</p>
                     <ul class="space-y-1 text-xs text-gray-400">
                         <li>• Экономия до 1 595 ₽</li>
@@ -1004,7 +1002,10 @@
                     </ul>
                 </div>
                 <div class="bg-[#142125] border border-white/10 rounded-xl p-6 hover:border-gold/30 transition">
-                    <div class="text-gold-gradient text-2xl font-bold mb-3">📊 Рассрочка</div>
+                    <div class="flex items-center gap-2 text-gold-gradient text-2xl font-bold mb-3">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        Рассрочка
+                    </div>
                     <p class="text-white mb-3">Разбейте оплату на 2-3 части без переплаты</p>
                     <ul class="space-y-1 text-xs text-gray-400">
                         <li>• Без процентов и переплат</li>
@@ -1012,7 +1013,10 @@
                     </ul>
                 </div>
                 <div class="bg-[#142125] border border-white/10 rounded-xl p-6 hover:border-gold/30 transition">
-                    <div class="text-gold-gradient text-2xl font-bold mb-3">📝 Налоговый вычет</div>
+                    <div class="flex items-center gap-2 text-gold-gradient text-2xl font-bold mb-3">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Налоговый вычет
+                    </div>
                     <p class="text-white mb-3">Верните до 13% стоимости обучения</p>
                     <ul class="space-y-1 text-xs text-gray-400">
                         <li>• До 2 756 ₽ возврата</li>
@@ -1198,7 +1202,34 @@
             });
         });
 
-        // 5. Module Accordion
+        // 5. FAQ Category Filter
+        window.showFaqCategory = function(category) {
+            // Update tabs
+            document.querySelectorAll('.faq-tab').forEach(tab => {
+                tab.classList.remove('active');
+                if(tab.dataset.category === category) {
+                    tab.classList.add('active');
+                }
+            });
+
+            // Filter items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if(category === 'all' || item.dataset.category === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Close all open answers when switching categories
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+        };
+
+        // Show only "course" category by default, hide others
+        showFaqCategory('course');
+
+        // 6. Module Accordion
         function toggleModule(header) {
             const content = header.nextElementSibling;
             const icon = header.querySelector('.module-icon');
