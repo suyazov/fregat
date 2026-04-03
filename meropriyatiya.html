@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <!-- Preconnect для внешних ресурсов -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мероприятия — Школа тендерного обучения «Фрегат»</title>
+    <meta name="description" content="Предстоящие мероприятия Школы «Фрегат». Семинары, курсы повышения квалификации, вебинары по тендерам.">
+
+    <!-- Open Graph теги -->
+    <meta property="og:title" content="Мероприятия — Школа Фрегат">
+    <meta property="og:description" content="Предстоящие мероприятия: семинары, курсы, вебинары по тендерам">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://suyazov.github.io/fregat/meropriyatiya.html">
+    <meta property="og:image" content="https://suyazov.github.io/fregat/og-image.jpg">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; connect-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' https: data:;">
+
+    <!-- Tailwind CSS через CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#FBE5A8',
+                            dark: '#B8860B',
+                        },
+                        dark: {
+                            bg: '#142125',
+                            card: '#0d181b',
+                            footer: '#0a1214',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Шрифт Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+
+    <!-- Дизайн-система Фрегат -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="geo-pattern">
+
+    <!-- Прогресс бар прокрутки -->
+    <div id="scroll-progress"></div>
+
+    <!-- Кнопка наверх -->
+    <div id="back-to-top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+    </div>
+
+    <!-- Вертикальная надпись -->
+    <div class="vertical-brand hidden lg:block">
+        School Fregat • Tender Training
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 backdrop-blur-md border-b border-white/10" style="background-color: rgba(20, 33, 37, 0.95);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="https://z-cdn-media.chatglm.cn/files/13817077-3fd8-4076-ab8b-31702a8b0e59.png?auth_key=1873167472-1ad3307f6b1647739973096b31e2b490-0-f38e570a642956a5ac3e872ef08c03d4" alt="Логотип Фрегат" class="h-12 w-auto logo-clean">
+                <span class="text-2xl font-light tracking-widest text-gold-gradient">ФРЕГАТ</span>
+            </a>
+            <nav class="hidden md:flex gap-10 text-sm text-gray-300">
+                <a href="o-shkole.html" class="hover:text-white transition">О школе</a>
+                <a href="prepodavateli.html" class="hover:text-white transition">Преподаватели</a>
+                <a href="meropriyatiya.html" class="text-gold font-semibold">Мероприятия</a>
+                <a href="kontakty.html" class="hover:text-white transition">Контакты</a>
+            </nav>
+            <a href="#cta" class="btn-gold px-6 py-3 rounded text-sm tracking-wide">Записаться</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center pt-20 overflow-hidden bg-[#142125]">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 py-20 w-full text-center">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 text-white">
+                Мероприятия <span class="font-serif italic text-gold-gradient">Школы «Фрегат»</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+                Семинары, курсы повышения квалификации и встречи с экспертами в сфере тендеров
+            </p>
+        </div>
+    </section>
+
+    <!-- Предстоящие мероприятия -->
+    <section class="py-24 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+                Предстоящие <span class="text-gold-gradient">мероприятия</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">Выберите формат и запишитесь на участие</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Семинар в ТПП -->
+                <div class="bg-[#0d181b] border border-gold rounded-xl overflow-hidden hover:shadow-gold/20 transition-all duration-300 group">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-gold/20 to-gold/5 h-48 flex items-center justify-center">
+                            <svg class="w-20 h-20 text-gold/30 group-hover:text-gold/50 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-gold text-black px-3 py-1 text-xs font-bold uppercase rounded">
+                            Очно
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gold text-sm font-semibold mb-2">8–10 апреля 2025</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Курс повышения квалификации «Специалист по государственным и корпоративным закупкам»</h3>
+                        <p class="text-gray-400 text-sm mb-4">Трёхдневный очный курс на базе Торгово-промышленной палаты Ставропольского края</p>
+                        <div class="flex items-center gap-2 text-gray-300 text-sm mb-4">
+                            <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            </svg>
+                            <span>Ставрополь, ТПП СК</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-2xl font-bold text-gold-gradient">10 000 ₽</div>
+                            <a href="seminar-tpp-april2025.html" class="btn-gold px-6 py-2 rounded-lg text-sm font-semibold">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder для будущего мероприятия -->
+                <div class="bg-[#0d181b] border border-white/10 rounded-xl p-8 flex flex-col items-center justify-center text-center min-h-[400px]">
+                    <svg class="w-16 h-16 text-gray-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <p class="text-gray-500">Следующие мероприятия<br>публикуются позже</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="py-24 bg-gradient-to-b from-[#142125] to-[#0d181b] border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-white">
+                Хотите быть в курсе всех мероприятий?
+            </h2>
+            <p class="text-gray-300 mb-8">
+                Подпишитесь на рассылку и получайте информацию о новых семинарах и курсах первыми
+            </p>
+            <a href="mailto:Frigate0408@gmail.com" class="inline-flex items-center gap-3 btn-gold px-10 py-4 rounded-lg text-lg font-semibold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                Подписаться на рассылку
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10 bg-[#0a1214]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Логотип -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://z-cdn-media.chatglm.cn/files/13817077-3fd8-4076-ab8b-31702a8b0e59.png?auth_key=1873167472-1ad3307f6b1647739973096b31e2b490-0-f38e570a642956a5ac3e872ef08c03d4" alt="Логотип Фрегат" class="h-8 w-auto logo-clean">
+                        <span class="text-xl font-light tracking-widest text-gold-gradient">ФРЕГАТ</span>
+                    </div>
+                    <p class="text-gray-500 text-sm">
+                        Онлайн-школа тендерного обучения.<br>
+                        Обучение профессии «Тендерный специалист».
+                    </p>
+                </div>
+
+                <!-- Навигация -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Навигация</h4>
+                    <div class="text-sm flex flex-col gap-2">
+                        <a href="index.html" class="text-gray-400 hover:text-gold transition">Главная</a>
+                        <a href="o-shkole.html" class="text-gray-400 hover:text-gold transition">О школе</a>
+                        <a href="prepodavateli.html" class="text-gray-400 hover:text-gold transition">Преподаватели</a>
+                        <a href="meropriyatiya.html" class="text-gray-400 hover:text-gold transition">Мероприятия</a>
+                        <a href="kontakty.html" class="text-gray-400 hover:text-gold transition">Контакты</a>
+                    </div>
+                </div>
+
+                <!-- Документы -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Документы</h4>
+                    <div class="text-sm flex flex-col gap-2">
+                        <a href="politika-konfidentsialnosti.html" class="text-gray-400 hover:text-gold transition">Политика конфиденциальности</a>
+                        <a href="polzovatelskoe-soglashenie.html" class="text-gray-400 hover:text-gold transition">Пользовательское соглашение</a>
+                        <a href="svedeniya-ob-obrazovatelnoy-organizatsii.html" class="text-gray-400 hover:text-gold transition">Сведения об образовательной организации</a>
+                    </div>
+                </div>
+
+                <!-- Контакты -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Контакты</h4>
+                    <div class="text-sm text-gray-400 space-y-2">
+                        <p><a href="tel:+8652777009" class="hover:text-gold transition">+8 (652) 777-009</a></p>
+                        <p><a href="mailto:Frigate0408@gmail.com" class="hover:text-gold transition">Frigate0408@gmail.com</a></p>
+                        <p>г. Ставрополь, ул. Дзержинского, д. 114</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
+                <div>© 2025 Школа «Фрегат». Все права защищены.</div>
+                <div class="mt-2">Лицензия № Л035‑01217‑26/03829175</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Animation
+        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, observerOptions);
+        document.querySelectorAll('.animate-section').forEach(el => observer.observe(el));
+
+        // Progress Bar & Back to Top
+        const progressBar = document.getElementById('scroll-progress');
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+
+            if (scrollTop > 300) backToTop.classList.add('visible');
+            else backToTop.classList.remove('visible');
+        });
+
+        backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+    </script>
+</body>
+</html>

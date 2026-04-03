@@ -3,7 +3,7 @@
     <!-- Главная -->
     <url>
         <loc>https://suyazov.github.io/fregat/</loc>
-        <lastmod>2026-03-21</lastmod>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -11,7 +11,7 @@
     <!-- О школе -->
     <url>
         <loc>https://suyazov.github.io/fregat/o-shkole.html</loc>
-        <lastmod>2026-03-21</lastmod>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -19,7 +19,23 @@
     <!-- Преподаватели -->
     <url>
         <loc>https://suyazov.github.io/fregat/prepodavateli.html</loc>
-        <lastmod>2026-03-21</lastmod>
+        <lastmod>2026-04-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Мероприятия -->
+    <url>
+        <loc>https://suyazov.github.io/fregat/meropriyatiya.html</loc>
+        <lastmod>2026-04-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Семинар в ТПП -->
+    <url>
+        <loc>https://suyazov.github.io/fregat/seminar-tpp-april2025.html</loc>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -27,7 +43,7 @@
     <!-- Контакты -->
     <url>
         <loc>https://suyazov.github.io/fregat/kontakty.html</loc>
-        <lastmod>2026-03-21</lastmod>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -35,7 +51,7 @@
     <!-- Сведения об образовательной организации -->
     <url>
         <loc>https://suyazov.github.io/fregat/svedeniya-ob-obrazovatelnoy-organizatsii.html</loc>
-        <lastmod>2026-03-21</lastmod>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -43,7 +59,7 @@
     <!-- Политика конфиденциальности -->
     <url>
         <loc>https://suyazov.github.io/fregat/politika-konfidentsialnosti.html</loc>
-        <lastmod>2026-03-21</lastmod>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
@@ -51,7 +67,7 @@
     <!-- Пользовательское соглашение -->
     <url>
         <loc>https://suyazov.github.io/fregat/polzovatelskoe-soglashenie.html</loc>
-        <lastmod>2026-03-21</lastmod>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
